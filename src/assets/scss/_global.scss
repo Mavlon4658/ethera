@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Unbounded:wght@200..900&display=swap');
+
+// Fonts
+$font-unbounded: "Unbounded", sans-serif;
+$font-poppins: "Poppins", sans-serif;
+$font-ABeeZee: "ABeeZee", sans-serif;
+$font-plus-jakarta-sans: "Plus Jakarta Sans", sans-serif;
+$font-inter-tight: "Inter Tight", sans-serif;
+
+// Colors
+$color-black-pure: #000000;
+$color-baltic-sea: #0B0B0B;
+$color-gray: #3E3E42;
+$color-white: #EFEFE5;
+$color-lemon-green: #C5FF4A;
+$color-gradient-nt: linear-gradient(138.65deg, rgb(198, 241, 247) -4.169%,rgb(249, 131, 233) 36.201%,rgb(184, 119, 255) 77.724%,rgb(194, 233, 205) 106.56%);
+$color-stroke: #474747;
+$color-bg: #0B0B15;
+
+@mixin media($value) {
+    @if ($value < 0) {
+        @media screen and (min-width: calc($value * (-1)) + 'px') {
+            @content;
+        }
+
+    } @else {
+        @media screen and (max-width: $value + 'px') {
+            @content;
+        }
+    }
+}

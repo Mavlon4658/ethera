@@ -1,0 +1,10 @@
+@import './global';
+@import './normalize';
+
+body {
+    background: $color-bg;
+    color: #EFEFE5;
+    font-family: $font-unbounded;
+    font-weight: 400;
+    font-style: normal;
+}
