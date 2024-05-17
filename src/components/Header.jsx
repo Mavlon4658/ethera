@@ -26,6 +26,8 @@ export default function Header () {
                 </ul>
 
                 <Link to='/' className="btn_light">Restake now</Link>
+
+                <button className="menu_btn">MENU</button>
             </div>
         </header>
     )

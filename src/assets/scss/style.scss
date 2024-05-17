@@ -90,6 +90,10 @@ body {
     width: 100%;
     z-index: 3;
 
+    @include media (992) {
+        top: 30px;
+    }
+
     &__container {
         display: flex;
         align-items: center;
@@ -98,6 +102,12 @@ body {
         overflow: hidden;
         position: relative;
         z-index: 1;
+
+        @include media(992) {
+            padding: 0;
+            border: 1px solid #fff;
+            align-items: stretch;
+        }
 
         &::before {
             content: '';
@@ -109,6 +119,10 @@ body {
             height: 100%;
             background: black;
             filter: blur(50px);
+
+            @include media (992) {
+                // display: none;
+            }
         }
     }
 
@@ -121,8 +135,20 @@ body {
         line-height: -1px;
         letter-spacing: 4%;
 
+        @include media (992) {
+            width: 100%;
+            border: 1px solid #fff;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 13px 18px 14px;
+        }
+
         img {
             width: 63px;
+
+            @include media(992) {
+                width: 29px;
+            }
         }
     }
 
@@ -130,6 +156,10 @@ body {
         display: flex;
         align-items: center;
         gap: 50px;
+
+        @include media (992) {
+            display: none;
+        }
 
         &_link {
             color: rgb(255, 255, 255);
@@ -160,6 +190,26 @@ body {
             }
         }
     }
+
+    .btn_light {
+        display: none;
+    }
+
+    .menu_btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        flex-shrink: 0;
+        border: 1px solid #fff;
+        font-size: 12px;
+        color: #fff;
+        font-weight: 300;
+
+        @include media (-992) {
+            display: none;
+        }
+    }
 }
 // Header end
 
@@ -180,6 +230,10 @@ body {
 
     &__container {
         padding: 353px 0 267px;
+
+        @include media(992) {
+            padding: 163px;
+        }
     }
 
     &__subtitle {
@@ -218,6 +272,10 @@ body {
         position: relative;
         height: 1px;
 
+        @include media (992) {
+            height: auto;
+        }
+
         .description {
             &_top {
                 position: absolute;
@@ -227,6 +285,11 @@ body {
                 transform: translateY(-100%);
                 font-size: 16px;
                 color: #fff;
+
+                @include media(992) {
+                    position: static;
+                    transform: translate(0);
+                }
             }
 
             &_bottom {
@@ -236,6 +299,10 @@ body {
                 width: 216px;
                 font-size: 13px;
                 font-weight: 300;
+
+                @include media(992) {
+                    position: static;
+                }
 
                 img {
                     margin-bottom: 13px;
