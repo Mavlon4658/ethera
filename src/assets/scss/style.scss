@@ -24,6 +24,7 @@ body {
         background: $color-white;
         font-size: 16px;
         color: $color-black-pure;
+        cursor: pointer;
     }
 
     &_gradient {
@@ -31,6 +32,7 @@ body {
         color: $color-black-pure;
         font-size: 16px;
         padding: 15px 38px 17px;
+        cursor: pointer;
     }
 }
 
@@ -42,6 +44,36 @@ body {
         font-size: 54px;
         font-weight: 300;
         width: 709px;
+    }
+
+    &-h3 {
+        background: $color-gradient-nt;
+        color: transparent;
+        background-clip: text;
+        font-size: 42px;
+        font-weight: 300;
+    }
+
+    &-h4 {
+        font-size: 30px;
+        font-weight: 300;
+        background: $color-gradient-nt;
+        color: transparent;
+        background-clip: text;
+    }
+
+    &-h5 {
+        font-size: 24px;
+        font-weight: 300;
+    }
+
+    &-p3 {
+        font-size: 16px;
+        font-weight: 300;
+    }
+    &-p4 {
+        font-size: 14px;
+        font-weight: 300;
     }
 }
 
@@ -160,6 +192,20 @@ body {
     }
 
     &__title {
+        span {
+            position: relative;
+            background: $color-gradient-nt;
+            color: transparent;
+            background-clip: text;
+
+            img {
+                position: absolute;
+                display: inline-block;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, -100%);
+            }
+        }
     }
     
     &__content {
@@ -232,3 +278,369 @@ body {
     }
 }
 // Home end
+
+// Restaking
+.restaking {
+    margin: 99px 0;
+
+    &__container {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 90px;
+    }
+
+    &__content {
+        width: 100%;
+    }
+
+    &__subtitle {
+        font-size: 12px;
+        display: inline-block;
+        background: $color-gradient-nt;
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        font-weight: 400;
+        margin-bottom: 73px;
+    }
+
+    &__title {
+        margin-bottom: 33px;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        list-style-type: disc;
+
+        li {
+            width: 537px;
+            font-size: 24px;
+            line-height: 150%;
+            font-weight: 300;
+            color: #E4E4E4;
+        }
+    }
+
+    &__date {
+        padding: 33px 42px;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+            width: 158px;
+            margin-bottom: 35px;
+        }
+
+        span {
+            background: $color-gradient-nt;
+            color: transparent;
+            background-clip: text;
+            font-size: 14px;
+        }
+    }
+}
+// Restaking end
+
+// Introduching
+.introduching {
+    margin-bottom: 102px;
+
+    &__head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 32px;
+    }
+
+    &__content {
+        background: url('../images/introduching_content_bg.png') center/cover no-repeat;
+        position: relative;
+        z-index: 1;
+        padding: 76px 45px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 53px;
+
+        &_border {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .text-p3 {
+            margin: 20px 0px 50px;
+        }
+
+        ul {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+
+            li {
+                display: flex;
+                flex-direction: column;
+                gap: 14px;
+            }
+        }
+
+        .logo {
+            width: 344px;
+            flex-shrink: 0;
+        }
+    }
+}
+// Introduching end
+
+// Toknes
+.tokens {
+    margin-bottom: 100px;
+
+    &__head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin-bottom: 30px;
+
+        .text {
+            width: 830px;
+        }
+
+        h2 {
+            margin: 30px 0;
+        }
+    }
+
+    &__content {
+        display: flex;
+        align-items: stretch;
+        position: relative;
+        z-index: 1;
+        border: 1px solid #fff;
+
+        li {
+            width: 25%;
+            border: 1px solid #fff;
+        }
+        
+        .bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: -1;
+            border: 0;
+            height: 150px;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .card {
+            &_head {
+                text-align: center;
+                position: relative;
+                z-index: 1;
+                padding: 29px 0 28px;
+
+                .icon {
+                    width: 88px;
+                }
+
+                .bg {
+                    display: none;
+                }
+            }
+
+            &_body {
+                padding: 33px 0 36px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                background: $color-baltic-sea;
+                border-top: 2px solid #fff;
+
+                p {
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}
+// Toknes end
+
+// Auditors
+.auditors {
+    margin-bottom: 100px;
+
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 30px;
+
+        h2 {
+            margin: 30px 0;
+        }
+    }
+
+    &__content {
+        display: flex;
+        align-items: stretch;
+        border: 1px solid $color-white;
+
+        li {
+            width: 50%;
+            border: 1px solid $color-white;
+        }
+
+        .card {
+            &_head {
+                height: 133px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid $color-white;
+            }
+
+            &_body {
+                padding: 42px 21px 34px;
+            }
+
+            &_link {
+                margin-top: 35px;
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+
+                span {
+                    background: $color-gradient-nt;
+                    color: transparent;
+                    background-clip: text;
+                    font-size: 18px;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+}
+// Auditors end
+
+//  Partners
+.partners {
+    margin-bottom: 100px;
+
+    &__head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin-bottom: 30px;
+
+        h2 {
+            margin: 30px 0;
+        }
+
+        p {
+            color: #E4E4E4;
+        }
+    }
+
+    &__content {
+        display: flex;
+        border: 1px solid #fff;
+        
+        li {
+            width: 50%;
+            border: 1px solid #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 138px;
+        }
+    }
+}
+//  Partners end
+
+// Footer
+.footer {
+    &__top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 50px;
+    }
+
+    .logo_wrap {
+        p {
+            font-size: 19px;
+            font-weight: 300;
+            color: #fff;
+            margin-top: 26px;
+        }
+    }
+
+    &__navs {
+        display: flex;
+        align-items: flex-start;
+        gap: 70px;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+
+            a {
+                text-transform: uppercase;
+                font-size: 12px;
+            }
+
+            span {
+                text-transform: uppercase;
+                font-size: 14px;
+            }
+        }
+    }
+
+    &__form {
+        label {
+            font-size: 14px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .input_wrap {
+            display: flex;
+            align-items: stretch;
+            border: 1px solid $color-white;
+            padding: 6px 8px 6px 0;
+        }
+
+        input {
+            width: 100%;
+            padding: 0 20px;
+            font-size: 16px;
+            font-weight: 300;
+            color: $color-white;
+
+            &::placeholder {
+                color: $color-white;
+            }
+        }
+
+        button {
+            flex-shrink: 0;
+        }
+    }
+}
+// Footer end
