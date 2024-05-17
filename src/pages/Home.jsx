@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 
 export default function Home () {
     return (
-        <>
+        <div className="wrapper">
             <Header />
 
             {/* Home */}
@@ -231,6 +231,6 @@ export default function Home () {
             {/* Partner end */}
 
             <Footer />
-        </>
+        </div>
     ) 
 }

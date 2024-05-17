@@ -71,9 +71,14 @@ body {
         font-size: 16px;
         font-weight: 300;
     }
+
     &-p4 {
         font-size: 14px;
         font-weight: 300;
+    }
+
+    &-h5 {
+        font-size: 12px;
     }
 }
 
@@ -641,6 +646,38 @@ body {
         button {
             flex-shrink: 0;
         }
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: stretch;
+        border: 1px solid $color-white;
+        margin-bottom: 50px;
+
+        a {
+            border: 1px solid $color-white;
+            width: calc(100% / 3);
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+            span {
+                font-size: 16px;
+                font-weight: 300;
+            }
+
+            &:nth-child(1) {
+                background: $color-gradient-nt;
+                color: $color-black-pure;
+            }
+        }
+    }
+
+    &__copy {
+        text-align: center;
+        padding-bottom: 57px;
     }
 }
 // Footer end

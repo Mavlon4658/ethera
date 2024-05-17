@@ -6,6 +6,9 @@ import stars from './stars.svg'
 import logo1 from './logo_1.svg'
 import arrowRight from './arrow-right.svg'
 import footerLogo from './footer_logo.svg'
+import telegram from './telegram_icon.svg'
+import discord from './discord_icon.svg'
+import twitter from './twitter.svg'
 
 const IMG = {
     logo: logo,
@@ -28,6 +31,9 @@ const IMG = {
     partnersIcon1: new URL('./partners_icon_1.png', import.meta.url).href,
     partnersIcon2: new URL('./partners_icon_2.png', import.meta.url).href,
     footerLogo: footerLogo,
+    telegram: telegram,
+    discord: discord,
+    twitter: twitter,
 };
 
 

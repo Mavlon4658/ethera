@@ -61,6 +61,21 @@ export default function Footer () {
                         </div>
                     </form>
                 </div>
+                <div className="footer__bottom">
+                    <a href="#">
+                        <img src={IMG.telegram} alt="" />
+                        <span>Telegram</span>
+                    </a>
+                    <a href="#">
+                        <img src={IMG.discord} alt="" />
+                        <span>Discord</span>
+                    </a>
+                    <a href="#">
+                        <img src={IMG.twitter} alt="" />
+                        <span>Twitter</span>
+                    </a>
+                </div>
+                <p className="text-p5 footer__copy">Copyright © 2024 ETHERA. ALL RIGHT RESERVED</p>
             </div>
         </footer>
     </>)
