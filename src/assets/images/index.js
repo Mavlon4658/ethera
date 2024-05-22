@@ -20,6 +20,7 @@ const IMG = {
     logo1: logo1,
     introduchingBg: new URL('./introduching_content_bg.png', import.meta.url).href,
     introduchingBorder: new URL('./introduching_rectungle.png', import.meta.url).href,
+    introduchingBorderSm: new URL('./introduching_rectungle_sm.png', import.meta.url).href,
     tokenContentBt: new URL('./tokens_content_bg.png', import.meta.url).href,
     tokenContentBtSm: new URL('./tokens_bg_sm.png', import.meta.url).href,
     tokenIcon1: new URL('./token_icon_1.png', import.meta.url).href,

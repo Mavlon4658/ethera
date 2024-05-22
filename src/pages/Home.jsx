@@ -59,13 +59,16 @@ export default function Home () {
             <section className="restaking">
                 <div className="main_container restaking__container">
                     <div className="restaking__content">
-                        <h4 className="restaking__subtitle">About US</h4>
+                        <div className="restaking__content_head">
+                            <h4 className="restaking__subtitle">About US</h4>
+                            <img src={IMG.stars} alt="" className="stars" />
+                        </div>
                         <h2 className="text-h2 restaking__title">Why liquid restaking?</h2>
                         <img src={IMG.restakingLine} alt="" className="restaking__line" />
                         <ul>
                             <li>Nice Lock-up for resatked tokens.</li>
                             <li>Easily manage multiple restaking rewards.</li>
-                            <li>Whitelished services and validation .</li>
+                            <li>Whitelished services and validation.</li>
                         </ul>
                         <img src={IMG.stars} alt="" className="stars" />
                     </div>
@@ -86,6 +89,7 @@ export default function Home () {
                     </div>
                     <div className="introduching__content">
                         <img src={IMG.introduchingBorder} alt="" className="introduching__content_border" />
+                        <img src={IMG.introduchingBorderSm} alt="" className="introduching__content_border sm" />
                         <div className="text">
                             <h3 className="text-h3">Simple staking integrations with etETH</h3>
                             <p className="text-p3">Liquid Collective's etETH is a liquid staking token, built to meet the needs of businesses offering staking to their customers.</p>
@@ -110,6 +114,7 @@ export default function Home () {
             <section className="tokens">
                 <div className="main_container">
                     <div className="tokens__head">
+                        <span className="tokens__subtitle">Since 2006</span>
                         <div className="text">
                             <img src={IMG.restakingLine} alt="" className="line" />
                             <h2 className="text-h2">Supported Tokens</h2>
