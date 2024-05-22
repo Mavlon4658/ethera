@@ -277,6 +277,18 @@ body {
         height: 100%;
         object-fit: cover;
         z-index: -1;
+
+        @include media(992) {
+            display: none;
+        }
+
+        &.sm {
+            display: none;
+
+            @include media(992) {
+                display: block;
+            }
+        }
     }
 
     &__container {

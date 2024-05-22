@@ -13,6 +13,7 @@ import twitter from './twitter.svg'
 const IMG = {
     logo: logo,
     homeBg: new URL('./home_bg.png', import.meta.url).href,
+    homeBgSm: new URL('./home_bg_sm.png', import.meta.url).href,
     homeLine: homeLine,
     star: star,
     restakingLine: restakingLine,

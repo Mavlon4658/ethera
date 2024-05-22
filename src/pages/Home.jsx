@@ -12,6 +12,7 @@ export default function Home () {
             {/* Home */}
             <section className="home">
                 <img src={IMG.homeBg} className="home__bg" alt="" />
+                <img src={IMG.homeBgSm} alt="" className="home__bg sm" />
                 <div className="main_container home__container">
                     <h3 className="home__subtitle">
                         $796.94M
