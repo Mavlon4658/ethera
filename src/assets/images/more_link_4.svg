@@ -1,0 +1,8 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="24" cy="24" r="24" fill="#373548"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19 33H29C30.6569 33 32 31.6569 32 30V20.3717C32 19.576 31.6839 18.813 31.1213 18.2503L28.7497 15.8787C28.187 15.3161 27.424 15 26.6283 15H19C17.3432 15 16 16.3432 16 18V30C16 31.6569 17.3432 33 19 33Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M28 29H20" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M28 25.5H20" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M23 22H20" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M32 20.5H28.5C27.3954 20.5 26.5 19.6046 26.5 18.5V15" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

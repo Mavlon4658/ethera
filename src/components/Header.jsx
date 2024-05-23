@@ -3,7 +3,14 @@ import IMG from "../assets/images/index";
 import { useState } from "react";
 
 export default function Header () {
+    const [menuList, setMenuList] = useState([
+        {id: '#home', name: 'HOME'},
+        {id: '#about', name: 'ABOUT'},
+        {id: '#audit', name: 'AUDIT'},
+        {id: '#contact', name: 'CONTACT'},
+    ])
     const [menu, setMenu] = useState(false)
+    const [activeMenu, setActiveMenu] = useState('HOME')
 
     return (
         <>
@@ -15,18 +22,15 @@ export default function Header () {
                     </Link>
 
                     <ul className="header__navs">
-                        <li>
-                            <Link to={'/'} className="header__navs_link active">HOME</Link>
-                        </li>
-                        <li>
-                            <Link to={'/'} className="header__navs_link">ABOUT</Link>
-                        </li>
-                        <li>
-                            <Link to={'/'} className="header__navs_link">AUDIT</Link>
-                        </li>
-                        <li>
-                            <Link to={'/'} className="header__navs_link">CONTACT</Link>
-                        </li>
+                        {menuList.map((nav, navID) => (
+                            <li key={navID}>
+                                <a
+                                    href={nav.id} 
+                                    className={`header__navs_link ${activeMenu.toLowerCase() == nav.name.toLowerCase() ? 'active' : ''}`}
+                                    onClick={() => {setActiveMenu(nav.name)}}
+                                >{nav.name}</a>
+                            </li>
+                        ))}
                     </ul>
 
                     <Link to='/' className="btn_light">Restake now</Link>
@@ -37,18 +41,15 @@ export default function Header () {
 
             <section className={`mobile_menu ${menu ? 'active' : ''}`}>
                 <ul>
-                    <li>
-                        <Link to={'/'} className="active">Home</Link>
-                    </li>
-                    <li>
-                        <Link to={'/'}>About</Link>
-                    </li>
-                    <li>
-                        <Link to={'/'}>Audit</Link>
-                    </li>
-                    <li>
-                        <Link to={'/'}>Contact</Link>
-                    </li>
+                    {menuList.map((nav, navID) => (
+                        <li key={navID} onClick={() => {setMenu(false)}}>
+                            <a
+                                href={nav.id} 
+                                className={`${activeMenu.toLowerCase() == nav.name.toLowerCase() ? 'active' : ''}`}
+                                onClick={() => {setActiveMenu(nav.name)}}
+                            >{nav.name}</a>
+                        </li>
+                    ))}
                 </ul>
             </section>
         </>

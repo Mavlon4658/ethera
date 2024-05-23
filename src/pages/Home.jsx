@@ -10,7 +10,7 @@ export default function Home () {
             <Header />
 
             {/* Home */}
-            <section className="home">
+            <section id="home" className="home">
                 <img src={IMG.homeBg} className="home__bg" alt="" />
                 <img src={IMG.homeBgSm} alt="" className="home__bg sm" />
                 <div className="main_container home__container">
@@ -57,7 +57,7 @@ export default function Home () {
             {/* Home end */}
 
             {/* Restaking */}
-            <section className="restaking">
+            <section id="about" className="restaking">
                 <div className="main_container restaking__container">
                     <div className="restaking__content">
                         <div className="restaking__content_head">
@@ -173,7 +173,7 @@ export default function Home () {
             {/* Tokens end */}
 
             {/* Auditors */}
-            <section className="auditors">
+            <section id="audit" className="auditors">
                 <div className="main_container">
                     <div className="auditors__head">
                         <div className="text">

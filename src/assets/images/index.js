@@ -39,6 +39,17 @@ import selectIcon1Active from './seelct_icon_1_active.svg'
 import selectIcon2Active from './select_icon_2.svg'
 import selectIcon3Active from './select_icon_3.svg'
 import selectIcon4Active from './select_icon_4_active.svg'
+import times from './times.svg'
+import auditLink1 from './audit_link_1.svg'
+import auditLink2 from './audit_link_2.svg'
+import linkIcon from './link_icon.svg'
+import chevronRight from './chevron-right.svg'
+import moreLink1 from './more_link_1.svg'
+import moreLink2 from './more_link_2.svg'
+import moreLink3 from './more_link_3.svg'
+import moreLink4 from './more_link_4.svg'
+import moreLink5 from './more_link_5.svg'
+import moreLink6 from './more_link_6.svg'
 
 const IMG = {
     logo: logo,
@@ -96,6 +107,17 @@ const IMG = {
     selectIcon2Active,
     selectIcon3Active,
     selectIcon4Active,
+    times,
+    auditLink1,
+    auditLink2,
+    linkIcon,
+    chevronRight,
+    moreLink1,
+    moreLink2,
+    moreLink3,
+    moreLink4,
+    moreLink5,
+    moreLink6,
 };
 
 

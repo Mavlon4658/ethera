@@ -3,7 +3,7 @@ import IMG from "../assets/images";
 
 export default function Footer () {
     return (<>
-        <footer className="footer">
+        <footer id="contact" className="footer">
             <div className="main_container">
                 <div className="footer__top">
                     <div className="logo_wrap">

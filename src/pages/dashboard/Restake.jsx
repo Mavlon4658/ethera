@@ -1,20 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import IMG from "../../assets/images";
 
-export default function Restake () {
+export default function Restake ({setActiveNav}) {
     const [tab, setTab] = useState(1);
     const [select, setSelect] = useState(1);
-    const [selectOpen, setSelectOpen] = useState(true)
+    const [selectOpen, setSelectOpen] = useState(true);
+    const [auditOpen, setAuditOpen] = useState(false)
+
+    useEffect(() => {
+        setActiveNav('Restake')
+    }, [])
 
     return (<>
         <div className="dashboard_card restake">
 
             <div className="restake__head">
                 <h3 className="d-h1">Restake</h3>
-                <span>
+                <button onClick={() => {setAuditOpen(true)}}>
                     <img src={IMG.audit} alt="" />
                     Audited
-                </span>
+                </button>
             </div>
 
             <ul className="restake_value">
@@ -52,8 +57,8 @@ export default function Restake () {
                             <div className={`select ${selectOpen ? 'active' : ''}`}>
                                 <button type="button" className="select_open" onClick={() => {setSelectOpen(false)}}>
                                     <span className="icon">
-                                        <svg width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1 0.999999L8.00002 8L15 1" stroke="#EFEFE5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <svg widths={16} height="9" viewBox="0 0 16 9" fill="none"  xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 0.999999L8.00002 8L15 1" stroke="#EFEFE5" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"/>
                                         </svg>
                                     </span>
                                 </button>
@@ -155,5 +160,35 @@ export default function Restake () {
             </div>
 
         </div>
+
+        {/* Audit modal */}
+        <div className={`audit_modal ${auditOpen ? 'active' : ''}`}>
+            <div className="audit_modal__content">
+                <div className="content_head">
+                    <h3>Safe and Secure</h3>
+                    <button onClick={() => {setAuditOpen(false)}}>
+                        <img src={IMG.times} alt="" />
+                    </button>
+                </div>
+                <ul className="content_link">
+                    <li className="content_link__item">
+                        <img src={IMG.auditLink1} alt="" className="icon" />
+                        <a href="#">
+                            <span>Get full report</span>
+                            <img src={IMG.linkIcon} alt="" />
+                        </a>
+                    </li>
+                    <li className="content_link__item">
+                        <img src={IMG.auditLink1} alt="" className="icon" />
+                        <a href="#">
+                            <span>Get full report</span>
+                            <img src={IMG.linkIcon} alt="" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        {/* Audit modal end */}
+
     </>)
 }

@@ -2,7 +2,7 @@ import { Outlet, Link } from "react-router-dom";
 import IMG from "../../assets/images";
 import { useState } from "react";
 
-export default function Lyout () {
+export default function Lyout ({activeNav}) {
     const [navList, setNavList] = useState([
         {name: 'Restake', to: '/dashboard/restake', img: IMG.navIcon1, activeImg: IMG.navIcon1Active},
         {name: 'Dashboard', to: '/dashboard', img: IMG.navIcon2, activeImg: IMG.navIcon2Active},
@@ -11,7 +11,15 @@ export default function Lyout () {
         {name: 'Claim ETHER', to: '/dashboard', img: IMG.navIcon5, activeImg: IMG.navIcon5Active},
         {name: 'Wrap etETH', to: '/dashboard', img: IMG.navIcon6, activeImg: IMG.navIcon6Active},
     ]);
-    const [activeNav, setActiveNav] = useState('Restake');
+    const [moreLink, setMoreLink] = useState([
+        {name: 'Twitter', img: IMG.moreLink1},
+        {name: 'Telegram', img: IMG.moreLink2},
+        {name: 'Discord', img: IMG.moreLink3},
+        {name: 'Docs', img: IMG.moreLink4},
+        {name: 'Terms of service', img: IMG.moreLink5},
+        {name: 'Risks & Disclaimer', img: IMG.moreLink6},
+    ]);
+    const [activeMoreLink, setActiveMoreLink] = useState(false)
 
     return (
         <div className="dashboard">
@@ -24,7 +32,7 @@ export default function Lyout () {
                 </li>
                 {navList.map((nav, navID) => (
                     <li key={navID}>
-                        <Link to={nav.to} className={`nav_left__link ${nav.name == activeNav ? 'active' : ''}`} onClick={() => {setActiveNav(nav.name)}} >
+                        <Link to={nav.to} className={`nav_left__link ${nav.name == activeNav ? 'active' : ''}`}>
                             <img src={nav.img} alt="" />
                             <img src={nav.activeImg} alt="" className="active" />
                             <span>{nav.name}</span>
@@ -40,9 +48,23 @@ export default function Lyout () {
             <div className="nav_right">
                 <div className="nav_right__head">
                     <button className="btn_gradient">Connect wallet</button>
-                    <button className="btn_light">
+                    <button className="btn_light" onClick={() => {setActiveMoreLink(!activeMoreLink)}}>
                         <img src={IMG.moreIcon} alt="" />
                     </button>
+                </div>
+
+                <div className={`more_link ${activeMoreLink ? 'active' : ''}`}>
+                    <ul>
+                        {moreLink.map((network, idx) => (
+                            <li key={idx}>
+                                <a href="#">
+                                    <img src={network.img} alt="" />
+                                    <span>{network.name}</span>
+                                    <img src={IMG.chevronRight} alt="" className="icon" />
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
 
                 <div className="nav_right__card">
