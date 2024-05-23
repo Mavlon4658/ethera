@@ -30,6 +30,7 @@ button {
     cursor: pointer;
     background: transparent;
     outline: 0;
+    
 }
 
 address {
@@ -43,4 +44,10 @@ address {
 
 ul, ol, dl {
     list-style: none;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
 }
