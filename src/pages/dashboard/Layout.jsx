@@ -24,6 +24,25 @@ export default function Lyout ({activeNav}) {
 
     return (
         <div className="dashboard">
+            <div className="nav_sm">
+                <div className="dashboard__container">
+                    <div className="nav_sm__left">
+                        <button className="bars">
+                            <img src={IMG.bars} alt="" />
+                        </button>
+                        <Link to={'/'} className="logo">
+                            <img src={IMG.logo} alt="" />
+                        </Link>
+                    </div>
+                    <div className="nav_sm__right">
+                        <button className="btn_gradient" onClick={() => {setConnectWallet(true)}}>Connect wallet</button>
+                        <button className="btn_light" onClick={() => {setActiveMoreLink(!activeMoreLink)}}>
+                            <img src={IMG.moreIcon} alt="" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+
             <ul className="nav_left">
                 <li>
                     <Link to={'/'} className="nav_left__logo">

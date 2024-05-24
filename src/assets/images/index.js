@@ -56,6 +56,7 @@ import recommendIcon2 from './recommend_icon_2.svg'
 import recommendIcon3 from './recommend_icon_3.svg'
 import aboutIcon1 from './about_icon_1.svg'
 import aboutIcon2 from './about_icon_2.svg'
+import bars from './bars.svg'
 
 const IMG = {
     logo: logo,
@@ -130,6 +131,7 @@ const IMG = {
     recommendIcon3,
     aboutIcon1,
     aboutIcon2,
+    bars,
 };
 
 

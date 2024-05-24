@@ -78,7 +78,7 @@ export default function Restake ({setActiveNav}) {
                                     <span className="select_item__left">
                                         <img src={IMG.selectIcon2} alt="" />
                                         <img src={IMG.selectIcon2Active} className="active" alt="" />
-                                        ETHx
+                                        ETH
                                     </span>
                                     <span className="select_item__right">
                                         <span className="alert-grey">EL Points</span>
@@ -90,7 +90,7 @@ export default function Restake ({setActiveNav}) {
                                     <span className="select_item__left">
                                         <img src={IMG.selectIcon3} alt="" />
                                         <img src={IMG.selectIcon3Active} className="active" alt="" />
-                                        ETHx
+                                        stETH
                                     </span>
                                     <span className="select_item__right">
                                         <span className="alert-grey">EL Points</span>
@@ -102,7 +102,7 @@ export default function Restake ({setActiveNav}) {
                                     <span className="select_item__left">
                                         <img src={IMG.selectIcon4} alt="" />
                                         <img src={IMG.selectIcon4Active} className="active" alt="" />
-                                        ETHx
+                                        sfrxETH
                                     </span>
                                     <span className="select_item__right">
                                         <span className="alert-grey">EL Points</span>
