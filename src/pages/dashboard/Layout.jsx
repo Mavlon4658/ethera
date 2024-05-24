@@ -69,9 +69,7 @@ export default function Lyout ({activeNav}) {
                 ))}
             </ul>
 
-            <div className="dashboard__container">
-                <Outlet />
-            </div>
+            <Outlet />
 
             <div className="nav_right">
                 <div className="nav_right__head">

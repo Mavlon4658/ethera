@@ -58,6 +58,9 @@ import aboutIcon1 from './about_icon_1.svg'
 import aboutIcon2 from './about_icon_2.svg'
 import bars from './bars.svg'
 import timesWhite from './time-white.svg'
+import chevronBottom from './chevron-bottom.svg'
+import pointIcon from './point_card_icon_2.svg'
+import warningBlack from './warning-black.svg'
 
 const IMG = {
     logo: logo,
@@ -134,6 +137,9 @@ const IMG = {
     aboutIcon2,
     bars,
     timesWhite,
+    chevronBottom,
+    pointIcon,
+    warningBlack,
 };
 
 

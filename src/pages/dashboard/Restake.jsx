@@ -11,7 +11,7 @@ export default function Restake ({setActiveNav}) {
         setActiveNav('Restake')
     }, [])
 
-    return (<>
+    return (<div className="restake_wrap dashboard__container">
         <div className="dashboard_card restake">
 
             <div className="restake__head">
@@ -190,5 +190,5 @@ export default function Restake ({setActiveNav}) {
         </div>
         {/* Audit modal end */}
 
-    </>)
+    </div>)
 }
