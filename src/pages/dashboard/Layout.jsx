@@ -20,6 +20,7 @@ export default function Lyout ({activeNav}) {
         {name: 'Risks & Disclaimer', img: IMG.moreLink6},
     ]);
     const [activeMoreLink, setActiveMoreLink] = useState(false)
+    const [connectWallet, setConnectWallet] = useState(false)
 
     return (
         <div className="dashboard">
@@ -47,7 +48,7 @@ export default function Lyout ({activeNav}) {
 
             <div className="nav_right">
                 <div className="nav_right__head">
-                    <button className="btn_gradient">Connect wallet</button>
+                    <button className="btn_gradient" onClick={() => {setConnectWallet(true)}}>Connect wallet</button>
                     <button className="btn_light" onClick={() => {setActiveMoreLink(!activeMoreLink)}}>
                         <img src={IMG.moreIcon} alt="" />
                     </button>
@@ -138,6 +139,71 @@ export default function Lyout ({activeNav}) {
                     </ul>
                 </div>
             </div>
+
+            {/* Connect wallet */}
+            <div className={`connect_wallet ${connectWallet ? 'active' : ''}`}>
+                <div className="connect_wallet__content">
+                    <button className="connect_wallet__close" onClick={() => {setConnectWallet(false)}}>
+                        <img src={IMG.close} alt="" />
+                    </button>
+                    <div className="connect_wallet__content_left">
+                        <h2>Connect wallet</h2>
+                        <div className="recommend">
+                            <p className="title">Recommended</p>
+                            <ul className="recommend__list">
+                                <li>
+                                    <img src={IMG.recommendIcon1} alt="" />
+                                    <span>MetaMask</span>
+                                </li>
+                                <li>
+                                    <img src={IMG.recommendIcon2} alt="" />
+                                    <span>Coinbase Wallet</span>
+                                </li>
+                                <li>
+                                    <img src={IMG.recommendIcon3} alt="" />
+                                    <span>WalletConnect</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="connect_wallet__content_right">
+                        <h3 className="title">What is a wallet?</h3>
+                        <ul>
+                            <li>
+                                <img src={IMG.aboutIcon1} alt="" />
+                                <div className="text">
+                                    <h4>A home for your digital assets</h4>
+                                    <p>
+                                        Wallets are used to <br />
+                                        send, receive, store and <br />
+                                        display digital assets, <br />
+                                        such as Ethereum and NFT.
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src={IMG.aboutIcon2} alt="" />
+                                <div className="text">
+                                    <h4>New way of logging in</h4>
+                                    <p>
+                                        Instead of creating new accounts and <br />
+                                        and passwords on every site, just <br />
+                                        connect your wallet.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                        <div className="link">
+                            <a href="#" className="link_dark">Get a wallet</a>
+                            <a href="#" className="link_light">Read more</a>
+                        </div>
+                        <p className="agree_text">
+                            By connecting a wallet, you agree to Kelp’s <a href="https://docs.google.com/document/d/1eSIGFBIZhsH35fZ-EL_UqlK_8f08Vjup/edit" target="_blank">Terms of Service</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {/* Connect wallet end */}
         </div>
     )
 }

@@ -50,6 +50,12 @@ import moreLink3 from './more_link_3.svg'
 import moreLink4 from './more_link_4.svg'
 import moreLink5 from './more_link_5.svg'
 import moreLink6 from './more_link_6.svg'
+import close from './close.svg'
+import recommendIcon1 from './recommend_icon_1.svg'
+import recommendIcon2 from './recommend_icon_2.svg'
+import recommendIcon3 from './recommend_icon_3.svg'
+import aboutIcon1 from './about_icon_1.svg'
+import aboutIcon2 from './about_icon_2.svg'
 
 const IMG = {
     logo: logo,
@@ -118,6 +124,12 @@ const IMG = {
     moreLink4,
     moreLink5,
     moreLink6,
+    close,
+    recommendIcon1,
+    recommendIcon2,
+    recommendIcon3,
+    aboutIcon1,
+    aboutIcon2,
 };
 
 
