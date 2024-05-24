@@ -21,13 +21,14 @@ export default function Lyout ({activeNav}) {
     ]);
     const [activeMoreLink, setActiveMoreLink] = useState(false)
     const [connectWallet, setConnectWallet] = useState(false)
+    const [navLeft, setNavLeft] = useState(false)
 
     return (
         <div className="dashboard">
             <div className="nav_sm">
                 <div className="dashboard__container">
                     <div className="nav_sm__left">
-                        <button className="bars">
+                        <button className="bars" onClick={() => {setNavLeft(true)}}>
                             <img src={IMG.bars} alt="" />
                         </button>
                         <Link to={'/'} className="logo">
@@ -43,7 +44,10 @@ export default function Lyout ({activeNav}) {
                 </div>
             </div>
 
-            <ul className="nav_left">
+            <ul className={`nav_left ${navLeft ? 'active' : ''}`}>
+                <li className="nav_left__close" onClick={() => {setNavLeft(false)}}>
+                    <img src={IMG.timesWhite} alt="" />
+                </li>
                 <li>
                     <Link to={'/'} className="nav_left__logo">
                         <img src={IMG.logo} alt="" />
@@ -52,7 +56,11 @@ export default function Lyout ({activeNav}) {
                 </li>
                 {navList.map((nav, navID) => (
                     <li key={navID}>
-                        <Link to={nav.to} className={`nav_left__link ${nav.name == activeNav ? 'active' : ''}`}>
+                        <Link
+                            to={nav.to}
+                            className={`nav_left__link ${nav.name == activeNav ? 'active' : ''}`}
+                            onClick={() => {setNavLeft(false)}}
+                        >
                             <img src={nav.img} alt="" />
                             <img src={nav.activeImg} alt="" className="active" />
                             <span>{nav.name}</span>
@@ -74,6 +82,7 @@ export default function Lyout ({activeNav}) {
                 </div>
 
                 <div className={`more_link ${activeMoreLink ? 'active' : ''}`}>
+                    <div className="more_link__close" onClick={() => {setActiveMoreLink(false)}}></div>
                     <ul>
                         {moreLink.map((network, idx) => (
                             <li key={idx}>
@@ -120,6 +129,7 @@ export default function Lyout ({activeNav}) {
                         <li>
                             <div className="assets_title">
                                 <span>50.77K</span>
+                                <img src={IMG.warning} alt="" />
                             </div>
                             <div className="assets_text">
                                 <img src={IMG.assetCard1} alt="" />
@@ -129,6 +139,7 @@ export default function Lyout ({activeNav}) {
                         <li>
                             <div className="assets_title">
                                 <span>96.93K</span>
+                                <img src={IMG.warning} alt="" />
                             </div>
                             <div className="assets_text">
                                 <img src={IMG.assetCard2} alt="" />

@@ -179,7 +179,7 @@ export default function Restake ({setActiveNav}) {
                         </a>
                     </li>
                     <li className="content_link__item">
-                        <img src={IMG.auditLink1} alt="" className="icon" />
+                        <img src={IMG.auditLink2} alt="" className="icon" />
                         <a href="#">
                             <span>Get full report</span>
                             <img src={IMG.linkIcon} alt="" />

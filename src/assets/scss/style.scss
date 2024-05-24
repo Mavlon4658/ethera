@@ -1269,6 +1269,34 @@ button, input, textarea {
 
     @include media(1250) {
         display: none;
+
+        &.active {
+            display: flex;
+
+            z-index: 5;
+            background: $color-bg;
+            width: 100%;
+        }
+    }
+
+    &__close {
+        display: none;
+
+        @include media(1250) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 36px;
+            right: 31px;
+            width: 30px;
+            height: 30px;
+            font-family: sans-serif;
+
+            img {
+                width: 20px;
+            }
+        }
     }
 
     &__logo {
@@ -1330,7 +1358,15 @@ button, input, textarea {
     }
 
     @include media(1250) {
-        display: none;
+        position: static;
+        padding: 0;
+        width: 648px;
+        margin: 0 auto;
+        border: 0;
+    }
+
+    @include media(674) {
+        width: calc(100% - 26px);
     }
 
     &__head {
@@ -1338,6 +1374,10 @@ button, input, textarea {
         align-items: stretch;
         gap: 6px;
         margin-bottom: 53px;
+
+        @include media(1250) {
+            display: none;
+        }
 
         .btn {
             &_gradient {
@@ -1370,13 +1410,37 @@ button, input, textarea {
         border: 1px solid $color-stroke;
         background: $color-bg;
         padding: 25px 36px 44px;
-
+        
         @include media(1500) {
             width: 259px;
             left: 20px;
             top: 129px;
             min-height: 598px;
             padding: 25px 20px;
+        }
+
+        @include media(1250) {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 5;
+            background: rgba(0, 0, 0, .7);
+            display: flex;
+            align-items: flex-end;
+            padding: 0;
+        }
+
+        &__close {
+            @include media(1250) {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: transparent;
+            }
         }
 
         &:not(.active) {
@@ -1387,6 +1451,21 @@ button, input, textarea {
             display: flex;
             flex-direction: column;
             gap: 24px;
+
+            @include media(1250) {
+                width: 100%;
+                background: $color-bg;
+                border-top: 1px solid $color-stroke;
+                align-items: center;
+                padding: 25px 0 41px;
+                position: relative;
+            }
+
+            li {
+                @include media(1250) {
+                    width: 220px;
+                }
+            }
         }
 
         a {
@@ -1423,17 +1502,29 @@ button, input, textarea {
         padding: 24px 21px 24px 54px;
         margin-bottom: 16px;
 
+        @include media(1250) {
+            padding: 18px 13px;
+        }
+
         .title {
             font-size: 14px;
             font-weight: 600;
             margin-bottom: 36px;
             color: $color-white;
+
+            @include media(1250) {
+                margin-bottom: 10px;
+            }
         }
 
         .networks {
             display: flex;
             flex-direction: column;
             gap: 16px;
+
+            @include media(1250) {
+                gap: 10px;
+            }
 
             li {
                 display: flex;
@@ -1442,6 +1533,10 @@ button, input, textarea {
 
                 img {
                     flex-shrink: 0;
+
+                    @include media(1250) {
+                        width: 36px;
+                    }
                 }
 
                 .text {
@@ -1449,6 +1544,12 @@ button, input, textarea {
                     flex-direction: column;
                     gap: 1px;
                     font-size: 12px;
+
+                    @include media(1250) {
+                        flex-direction: row-reverse;
+                        justify-content: space-between;
+                        width: 100%;
+                    }
 
                     span {
                         font-size: 14px;
@@ -1464,11 +1565,21 @@ button, input, textarea {
                 flex-wrap: wrap;
                 gap: 18px 28px;
 
+                @include media(1250) {
+                    gap: 16px;
+                }
+
                 li {
                     width: 78px;
                     display: flex;
                     flex-direction: column;
                     gap: 8px;
+
+                    @include media(1250) {
+                        width: 100%;
+                        flex-direction: row-reverse;
+                        justify-content: space-between;
+                    }
                 }
             }
 
@@ -1504,6 +1615,7 @@ button, input, textarea {
     left: 0;
     width: 100%;
     display: none;
+    z-index: 3;
 
     @include media(1250) {
         display: block;
@@ -1595,20 +1707,40 @@ button, input, textarea {
         font-family: $font-ABeeZee;
         font-style: italic;
 
+        @include media(748) {
+            width: calc(100% - 26px);
+            padding: 26px 19px;
+            flex-direction: column;
+        }
+
         &_left {
             flex-shrink: 0;
             width: 288px;
             border-right: 1px solid #D7E9E9;
 
+            @include media(748) {
+                width: 100%;
+                border: 0;
+            }
+
             h2 {
                 margin-top: 19px;
                 font-size: 18px;
                 margin-bottom: 26px;
+
+                @include media(748) {
+                    text-align: center;
+                    margin-bottom: 9px;
+                }
             }
 
             .title {
                 font-size: 14px;
                 margin-bottom: 16px;
+
+                @include media(748) {
+                    display: none;
+                }
             }
 
             .recommend__list {
@@ -1616,12 +1748,28 @@ button, input, textarea {
                 flex-direction: column;
                 gap: 16px;
 
+                @include media(748) {
+                    flex-direction: row;
+                    justify-content: center;
+                    margin-bottom: 16px;
+                }
+
                 li {
                     display: flex;
                     align-items: center;
                     gap: 12px;
                     font-size: 16px;
                     font-weight: 300;
+
+                    @include media(748) {
+                        flex-direction: column;
+                        gap: 4px;
+                        font-size: 12px;
+
+                        img {
+                            width: 12px;
+                        }
+                    }
                 }
             }
         }
@@ -1630,10 +1778,18 @@ button, input, textarea {
             width: 100%;
             padding: 58px 0 33px 22px;
 
+            @include media(748) {
+                padding: 0;
+            }
+
             .title {
                 font-size: 18px;
                 text-align: center;
                 margin-bottom: 34px;
+
+                @include media(748) {
+                    margin-bottom: 17px;
+                }
             }
 
             ul {
@@ -1642,10 +1798,20 @@ button, input, textarea {
                 gap: 32px;
                 margin-bottom: 33px;
 
+                @include media(748) {
+                    gap: 17px;
+                    margin-bottom: 17px;
+                }
+
                 li {
                     display: flex;
                     align-items: center;
                     gap: 16px;
+
+                    @include media(748) {
+                        flex-direction: column;
+                        text-align: center;
+                    }
                 }
 
                 .text {
@@ -1654,6 +1820,10 @@ button, input, textarea {
                     align-items: flex-start;
                     gap: 5px;
                     font-size: 14px;
+
+                    @include media(748) {
+                        align-items: center;
+                    }
 
                     p {
                         color: rgba(60, 66, 66, 0.6);
@@ -1669,6 +1839,10 @@ button, input, textarea {
                 font-size: 14px;
                 margin-bottom: 28px;
 
+                @include media(748) {
+                    margin-bottom: 9px;
+                }
+
                 &_dark {
                     padding: 5px 38px;
                     border-radius: 15px;
@@ -1681,6 +1855,10 @@ button, input, textarea {
                 font-size: 15px;
                 letter-spacing: 2%;
                 text-align: center;
+
+                @include media(748) {
+                    font-size: 12px;
+                }
 
                 a {
                     display: inline;
@@ -2251,6 +2429,11 @@ button, input, textarea {
         width: 560px;
         padding: 40px 45px 40px 32px;
 
+        @include media(612) {
+            width: calc(100% - 52px);
+            padding: 19px 21px 28px;
+        }
+
         .content {
             &_head {
                 display: flex;
@@ -2261,19 +2444,32 @@ button, input, textarea {
                 h3 {
                     font-size: 24px;
                     font-weight: 600;
+
+                    @include media(612) {
+                        font-size: 16px;
+                    }
                 }
             }
 
             &_link {
                 display: flex;
-                align-items: flex-start;
+                align-items: flex-end;
                 gap: 157px;
+
+                @include media(612) {
+                    gap: 0px;
+                    justify-content: space-between;
+                }
 
                 &__item {
                     display: flex;
                     align-items: flex-start;
                     flex-direction: column;
                     gap: 9px;
+
+                    @include media(612) {
+                        // width: 50%;
+                    }
 
                     a {
                         display: flex;

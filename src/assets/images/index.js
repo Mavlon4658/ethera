@@ -57,6 +57,7 @@ import recommendIcon3 from './recommend_icon_3.svg'
 import aboutIcon1 from './about_icon_1.svg'
 import aboutIcon2 from './about_icon_2.svg'
 import bars from './bars.svg'
+import timesWhite from './time-white.svg'
 
 const IMG = {
     logo: logo,
@@ -132,6 +133,7 @@ const IMG = {
     aboutIcon1,
     aboutIcon2,
     bars,
+    timesWhite,
 };
 
 
