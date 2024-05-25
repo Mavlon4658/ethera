@@ -4,7 +4,7 @@ import IMG from "../../assets/images"
 export default function Wrap ({setActiveNav}) {
 
     useEffect(() => {
-        setActiveNav('Bridge etETH')
+        setActiveNav('Wrap etETH')
     }, [])
 
     return (<div className="wrap">

@@ -8,7 +8,7 @@ export default function Lyout ({activeNav}) {
         {name: 'Dashboard', to: '/dashboard', img: IMG.navIcon2, activeImg: IMG.navIcon2Active},
         {name: 'DeFi', to: '/dashboard/defi', img: IMG.navIcon3, activeImg: IMG.navIcon3Active},
         {name: 'Bridge etETH', to: '/dashboard/bridge', img: IMG.navIcon4, activeImg: IMG.navIcon4Active},
-        {name: 'Claim ETHER', to: '/dashboard', img: IMG.navIcon5, activeImg: IMG.navIcon5Active},
+        {name: 'Claim ETHER', to: '/dashboard/claim', img: IMG.navIcon5, activeImg: IMG.navIcon5Active},
         {name: 'Wrap etETH', to: '/dashboard/wrap', img: IMG.navIcon6, activeImg: IMG.navIcon6Active},
     ]);
     const [moreLink, setMoreLink] = useState([

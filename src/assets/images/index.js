@@ -66,6 +66,7 @@ import bridgeIcon2 from './bridge_icon_2.svg'
 import bridgeIcon3 from './bridge_icon_3.svg'
 import bridgeIcon4 from './bridge_icon_4.svg'
 import convert from './convert.svg'
+import claimCard1 from './claim_card_1.svg'
 
 const IMG = {
     logo: logo,
@@ -150,6 +151,7 @@ const IMG = {
     bridgeIcon3,
     bridgeIcon4,
     convert,
+    claimCard1
 };
 
 
