@@ -5,6 +5,7 @@ import Dashboard from "./pages/dashboard/Home";
 import Restake from "./pages/dashboard/Restake";
 import Defi from "./pages/dashboard/Defi";
 import Bridge from "./pages/dashboard/Bridge";
+import Wrap from "./pages/dashboard/Wrap";
 import { useState } from "react";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
             <Route path="restake" element={<Restake setActiveNav={handleNav}/>} />
             <Route path="defi" element={<Defi setActiveNav={handleNav}/>} />
             <Route path="bridge" element={<Bridge setActiveNav={handleNav}/>} />
+            <Route path="wrap" element={<Wrap setActiveNav={handleNav}/>} />
           </Route>
         </Route>
       </Routes>

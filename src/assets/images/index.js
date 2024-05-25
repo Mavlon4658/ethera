@@ -65,6 +65,7 @@ import bridgeIcon1 from './bridge_icon_1.svg'
 import bridgeIcon2 from './bridge_icon_2.svg'
 import bridgeIcon3 from './bridge_icon_3.svg'
 import bridgeIcon4 from './bridge_icon_4.svg'
+import convert from './convert.svg'
 
 const IMG = {
     logo: logo,
@@ -148,6 +149,7 @@ const IMG = {
     bridgeIcon2,
     bridgeIcon3,
     bridgeIcon4,
+    convert,
 };
 
 

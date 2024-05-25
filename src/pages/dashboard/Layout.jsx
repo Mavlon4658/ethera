@@ -9,7 +9,7 @@ export default function Lyout ({activeNav}) {
         {name: 'DeFi', to: '/dashboard/defi', img: IMG.navIcon3, activeImg: IMG.navIcon3Active},
         {name: 'Bridge etETH', to: '/dashboard/bridge', img: IMG.navIcon4, activeImg: IMG.navIcon4Active},
         {name: 'Claim ETHER', to: '/dashboard', img: IMG.navIcon5, activeImg: IMG.navIcon5Active},
-        {name: 'Wrap etETH', to: '/dashboard', img: IMG.navIcon6, activeImg: IMG.navIcon6Active},
+        {name: 'Wrap etETH', to: '/dashboard/wrap', img: IMG.navIcon6, activeImg: IMG.navIcon6Active},
     ]);
     const [moreLink, setMoreLink] = useState([
         {name: 'Twitter', img: IMG.moreLink1},
