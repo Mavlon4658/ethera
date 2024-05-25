@@ -4,6 +4,7 @@ import DashboardLayout from './pages/dashboard/Layout'
 import Dashboard from "./pages/dashboard/Home";
 import Restake from "./pages/dashboard/Restake";
 import Defi from "./pages/dashboard/Defi";
+import Bridge from "./pages/dashboard/Bridge";
 import { useState } from "react";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route index element={<Dashboard setActiveNav={handleNav}/>} />
             <Route path="restake" element={<Restake setActiveNav={handleNav}/>} />
             <Route path="defi" element={<Defi setActiveNav={handleNav}/>} />
+            <Route path="bridge" element={<Bridge setActiveNav={handleNav}/>} />
           </Route>
         </Route>
       </Routes>

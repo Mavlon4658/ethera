@@ -61,6 +61,10 @@ import timesWhite from './time-white.svg'
 import chevronBottom from './chevron-bottom.svg'
 import pointIcon from './point_card_icon_2.svg'
 import warningBlack from './warning-black.svg'
+import bridgeIcon1 from './bridge_icon_1.svg'
+import bridgeIcon2 from './bridge_icon_2.svg'
+import bridgeIcon3 from './bridge_icon_3.svg'
+import bridgeIcon4 from './bridge_icon_4.svg'
 
 const IMG = {
     logo: logo,
@@ -140,6 +144,10 @@ const IMG = {
     chevronBottom,
     pointIcon,
     warningBlack,
+    bridgeIcon1,
+    bridgeIcon2,
+    bridgeIcon3,
+    bridgeIcon4,
 };
 
 

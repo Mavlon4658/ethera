@@ -7,8 +7,8 @@ export default function Defi ({setActiveNav}) {
     }, [])
     
     return (
-        <>
+        <div className="dashboard__container defi">
             <h2>Defi</h2>
-        </>
+        </div>
     )
 }
