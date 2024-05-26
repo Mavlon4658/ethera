@@ -18,13 +18,13 @@ export default function Footer () {
                                 <span>Ethera</span>
                             </li>
                             <li>
-                                <Link to={'/'}>HOME</Link>
+                                <a href="#home">HOME</a>
                             </li>
                             <li>
-                                <Link to={'/'}>AUDIT</Link>
+                                <a href="#audit">AUDIT</a>
                             </li>
                             <li>
-                                <Link to={'/'}>CONTACT</Link>
+                                <a href="#contact">CONTACT</a>
                             </li>
                         </ul>
                         <ul className="footer__navs_item">
@@ -38,7 +38,7 @@ export default function Footer () {
                                 <Link to={'/'}>AMBASSADORS</Link>
                             </li>
                             <li>
-                                <Link to={'/'}>RESTAKE NOW</Link>
+                                <Link to={'/dashboard/restake'}>RESTAKE NOW</Link>
                             </li>
                         </ul>
                         <ul className="footer__navs_item">
@@ -63,15 +63,18 @@ export default function Footer () {
                 </div>
                 <div className="footer__bottom">
                     <a href="#">
-                        <img src={IMG.telegram} alt="" />
+                        <img src={IMG.telegramLight} alt="" />
+                        <img src={IMG.telegramDark} alt="" />
                         <span>Telegram</span>
                     </a>
                     <a href="#">
-                        <img src={IMG.discord} alt="" />
+                        <img src={IMG.discordLight} alt="" />
+                        <img src={IMG.discordDark} alt="" />
                         <span>Discord</span>
                     </a>
                     <a href="#">
-                        <img src={IMG.twitter} alt="" />
+                        <img src={IMG.twitterLight} alt="" />
+                        <img src={IMG.twitterDark} alt="" />
                         <span>Twitter</span>
                     </a>
                 </div>

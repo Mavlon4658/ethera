@@ -664,7 +664,11 @@ button, input, textarea {
         }
 
         h3 {
-            font-size: 26px;
+            font-size: 42px;
+
+            @include media(992) {
+                font-size: 26px;
+            }
         }
 
         .text-p3 {
@@ -696,9 +700,7 @@ button, input, textarea {
             }
 
             h4 {
-                @include media(992) {
-                    font-size: 24px;
-                }
+                font-size: 24px;
             }
 
             p {
@@ -726,10 +728,6 @@ button, input, textarea {
 
     @include media(992) {
         margin-bottom: 20px;
-    }
-
-    &__subtitle {
-        
     }
 
     &__head {
@@ -913,7 +911,7 @@ button, input, textarea {
     &__content {
         display: flex;
         align-items: stretch;
-        border: 1px solid $color-white;
+        border: 2px solid $color-white;
 
         @include media(992) {
             flex-direction: column;
@@ -922,10 +920,18 @@ button, input, textarea {
 
         li {
             width: 50%;
-            border: 1px solid $color-white;
 
             @include media(992) {
                 width: 100%;
+            }
+
+            &:nth-child(1) {
+                border-right: 2px solid $color-white;
+
+                @include media(674) {
+                    border: 0;
+                    border-bottom: 2px solid $color-white;
+                }
             }
         }
 
@@ -935,11 +941,10 @@ button, input, textarea {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                border: 2px solid $color-white;
 
                 @include media(992) {
-                    border: 0;
-                    border-bottom: 2px solid $color-white;
+                    // border: 0;
+                    // border-bottom: 2px solid $color-white;
                 }
 
                 img {
@@ -951,6 +956,7 @@ button, input, textarea {
 
             &_body {
                 padding: 42px 21px 34px;
+                border-top: 2px solid $color-white;
 
                 @include media(992) {
                     display: flex;
@@ -1178,6 +1184,10 @@ button, input, textarea {
             justify-content: center;
             gap: 10px;
 
+            img:nth-child(2) {
+                display: none;
+            }
+
             @include media(992) {
                 min-height: 40px;
 
@@ -1195,9 +1205,17 @@ button, input, textarea {
                 }
             }
 
-            &:nth-child(1) {
+            &:hover {
                 background: $color-gradient-nt;
                 color: $color-black-pure;
+                
+                img {
+                    display: none;
+
+                    &:nth-child(2) {
+                        display: block;
+                    }
+                }
             }
         }
     }
@@ -1205,6 +1223,7 @@ button, input, textarea {
     &__copy {
         text-align: center;
         padding-bottom: 57px;
+        font-size: 12px;
 
         @include media(992) {
             width: calc(100% + 52px);

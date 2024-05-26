@@ -27,7 +27,7 @@ export default function Home () {
                         </p>
                     </div>
                     <div className="home__links">
-                        <Link to={'/'} className="btn_gradient">Restake now</Link>
+                        <Link to={'/dashboard/restake'} className="btn_gradient">Restake now</Link>
                         <Link to={'/'} className="btn_light">Sign Up Now</Link>
                     </div>
                     <div className="list_wrap">
@@ -115,7 +115,7 @@ export default function Home () {
             <section className="tokens">
                 <div className="main_container">
                     <div className="tokens__head">
-                        <span className="tokens__subtitle">Since 2006</span>
+                        <span className="tokens__subtitle">Since 2015</span>
                         <div className="text">
                             <img src={IMG.restakingLine} alt="" className="line" />
                             <h2 className="text-h2">Supported Tokens</h2>
@@ -159,7 +159,7 @@ export default function Home () {
                         </li>
                         <li>
                             <div className="card_head">
-                                <img src={IMG.tokenIcon1} alt="" className="icon" />
+                                <img src={IMG.tokenIcon4} alt="" className="icon" />
                                 <img src={IMG.tokenContentBtSm} alt="" className="bg" />
                             </div>
                             <div className="card_body">

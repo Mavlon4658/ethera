@@ -6,9 +6,12 @@ import stars from './stars.svg'
 import logo1 from './logo_1.svg'
 import arrowRight from './arrow-right.svg'
 import footerLogo from './footer_logo.svg'
-import telegram from './telegram_icon.svg'
-import discord from './discord_icon.svg'
-import twitter from './twitter.svg'
+import telegramLight from './telegram-light.svg'
+import discordLight from './discord_icon.svg'
+import twitterLight from './twitter.svg'
+import telegramDark from './telegram_icon.svg'
+import discordDark from './discord-dark.svg'
+import twitterDark from './twitter-dark.svg'
 import navIcon1 from './nav_icon_1.svg'
 import navIcon1Active from './nav_icon_1_active.svg'
 import navIcon2 from './nav_icon_2.svg'
@@ -96,15 +99,19 @@ const IMG = {
     tokenIcon1: new URL('./token_icon_1.png', import.meta.url).href,
     tokenIcon2: new URL('./token_icon_2.png', import.meta.url).href,
     tokenIcon3: new URL('./token_icon_3.png', import.meta.url).href,
+    tokenIcon4: new URL('./token_icon_4.png', import.meta.url).href,
     auditorsIcon1: new URL('./auditors_icon_1.png', import.meta.url).href,
     auditorsIcon2: new URL('./auditors_icon_2.png', import.meta.url).href,
     arrowRight: arrowRight,
     partnersIcon1: new URL('./partners_icon_1.png', import.meta.url).href,
     partnersIcon2: new URL('./partners_icon_2.png', import.meta.url).href,
     footerLogo: footerLogo,
-    telegram: telegram,
-    discord: discord,
-    twitter: twitter,
+    telegramLight,
+    discordLight: discordLight,
+    twitterLight: twitterLight,
+    telegramDark: telegramDark,
+    discordDark,
+    twitterDark,
     navIcon1: navIcon1,
     navIcon1Active: navIcon1Active,
     navIcon2: navIcon2,
