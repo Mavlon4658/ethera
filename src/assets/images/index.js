@@ -67,6 +67,17 @@ import bridgeIcon3 from './bridge_icon_3.svg'
 import bridgeIcon4 from './bridge_icon_4.svg'
 import convert from './convert.svg'
 import claimCard1 from './claim_card_1.svg'
+import assetsIcon1 from './assets_icon_1.svg'
+import assetsIcon2 from './assets_icon_2.svg'
+import assetsIcon3 from './assets_icon_3.svg'
+import assetsIcon4 from './assets_icon_4.svg'
+import assetsIcon5 from './assets_icon_5.svg'
+import assetsIcon6 from './assets_icon_6.svg'
+import providerIcon1 from './provider_icon_1.svg'
+import providerIcon2 from './provider_icon_2.svg'
+import providerIcon3 from './provider_icon_3.svg'
+import providerIcon4 from './provider_icon_4.svg'
+import providerIcon5 from './provider_icon_5.svg'
 
 const IMG = {
     logo: logo,
@@ -151,7 +162,18 @@ const IMG = {
     bridgeIcon3,
     bridgeIcon4,
     convert,
-    claimCard1
+    claimCard1,
+    assetsIcon1,
+    assetsIcon2,
+    assetsIcon3,
+    assetsIcon4,
+    assetsIcon5,
+    assetsIcon6,
+    providerIcon1,
+    providerIcon2,
+    providerIcon3,
+    providerIcon4,
+    providerIcon5,
 };
 
 
