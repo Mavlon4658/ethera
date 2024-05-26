@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import IMG from "../../assets/images"
 
-export default function Wrap ({setActiveNav}) {
+export default function Wrap ({setConnectWallet, setActiveNav}) {
 
     useEffect(() => {
         setActiveNav('Wrap etETH')
@@ -34,7 +34,11 @@ export default function Wrap ({setActiveNav}) {
                         <span>wetETH</span>
                     </div>
                 </div>
-                <button type="submit" className="btn_gradient submit_btn">Connect Wallet</button>
+                <button
+                    type="button"
+                    className="btn_gradient submit_btn"
+                    onClick={() => {setConnectWallet(true)}}
+                >Connect Wallet</button>
             </form>
         </div>
     </div>)

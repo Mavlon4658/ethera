@@ -8,7 +8,6 @@ export default function Bridge ({setActiveNav}) {
         {name: "Manta Pacific", img: IMG.bridgeIcon3},
         {name: "Blast", img: IMG.bridgeIcon4},
     ])
-    const [activeBridge, setActiveBridge] = useState(1)
 
     useEffect(() => {
         setActiveNav('Bridge etETH')
@@ -20,9 +19,8 @@ export default function Bridge ({setActiveNav}) {
         <div className="bridge__list">
             {bridgeList.map((list, listID) => (
                 <button
-                    className={`list_item ${activeBridge == listID ? 'active' : ''}`}
+                    className="list_item"
                     key={listID}
-                    onClick={() => {setActiveBridge(listID)}}
                 >
                     <span className="list_item__left">
                         Bridge To

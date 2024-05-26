@@ -2,7 +2,7 @@ import { Outlet, Link } from "react-router-dom";
 import IMG from "../../assets/images";
 import { useState } from "react";
 
-export default function Lyout ({activeNav}) {
+export default function Lyout ({connectWallet, setConnectWallet, activeNav}) {
     const [navList, setNavList] = useState([
         {name: 'Restake', to: '/dashboard/restake', img: IMG.navIcon1, activeImg: IMG.navIcon1Active},
         {name: 'Dashboard', to: '/dashboard', img: IMG.navIcon2, activeImg: IMG.navIcon2Active},
@@ -20,7 +20,7 @@ export default function Lyout ({activeNav}) {
         {name: 'Risks & Disclaimer', img: IMG.moreLink6},
     ]);
     const [activeMoreLink, setActiveMoreLink] = useState(false)
-    const [connectWallet, setConnectWallet] = useState(false)
+    // const [connectWallet, setConnectWallet] = useState(false)
     const [navLeft, setNavLeft] = useState(false)
 
     return (
@@ -84,7 +84,7 @@ export default function Lyout ({activeNav}) {
                     <ul>
                         {moreLink.map((network, idx) => (
                             <li key={idx}>
-                                <a href="#">
+                                <a href="#" target="_blank">
                                     <img src={network.img} alt="" />
                                     <span>{network.name}</span>
                                     <img src={IMG.chevronRight} alt="" className="icon" />
@@ -127,7 +127,25 @@ export default function Lyout ({activeNav}) {
                         <li>
                             <div className="assets_title">
                                 <span>50.77K</span>
-                                <img src={IMG.warning} alt="" />
+                                <div className="alert">
+                                    <img src={IMG.warning} alt="" />
+                                    <div className="alert_text__wrap">
+                                        <div className="alert_text">
+                                            <p>
+                                                Deposited on Ethera
+                                                <span>50 743,06</span>
+                                            </p>
+                                            <p>
+                                                Restaked on EigenLayer
+                                                <span>50 402,19</span>
+                                            </p>
+                                            <p>
+                                                To be Restaked
+                                                <span>340,87</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div className="assets_text">
                                 <img src={IMG.assetCard1} alt="" />
@@ -137,7 +155,25 @@ export default function Lyout ({activeNav}) {
                         <li>
                             <div className="assets_title">
                                 <span>96.93K</span>
-                                <img src={IMG.warning} alt="" />
+                                <div className="alert">
+                                    <img src={IMG.warning} alt="" />
+                                    <div className="alert_text__wrap">
+                                        <div className="alert_text">
+                                            <p>
+                                                Deposited on Ethera
+                                                <span>50 743,06</span>
+                                            </p>
+                                            <p>
+                                                Restaked on EigenLayer
+                                                <span>50 402,19</span>
+                                            </p>
+                                            <p>
+                                                To be Restaked
+                                                <span>340,87</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div className="assets_text">
                                 <img src={IMG.assetCard2} alt="" />
@@ -147,7 +183,25 @@ export default function Lyout ({activeNav}) {
                         <li>
                             <div className="assets_title">
                                 <span>13.13K</span>
-                                <img src={IMG.warning} alt="" />
+                                <div className="alert">
+                                    <img src={IMG.warning} alt="" />
+                                    <div className="alert_text__wrap">
+                                        <div className="alert_text">
+                                            <p>
+                                                Deposited on Ethera
+                                                <span>50 743,06</span>
+                                            </p>
+                                            <p>
+                                                Restaked on EigenLayer
+                                                <span>50 402,19</span>
+                                            </p>
+                                            <p>
+                                                To be Restaked
+                                                <span>340,87</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div className="assets_text">
                                 <img src={IMG.assetCard3} alt="" />
@@ -157,7 +211,25 @@ export default function Lyout ({activeNav}) {
                         <li>
                             <div className="assets_title">
                                 <span>88.4K</span>
-                                <img src={IMG.warning} alt="" />
+                                <div className="alert">
+                                    <img src={IMG.warning} alt="" />
+                                    <div className="alert_text__wrap">
+                                        <div className="alert_text">
+                                            <p>
+                                                Deposited on Ethera
+                                                <span>50 743,06</span>
+                                            </p>
+                                            <p>
+                                                Restaked on EigenLayer
+                                                <span>50 402,19</span>
+                                            </p>
+                                            <p>
+                                                To be Restaked
+                                                <span>340,87</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div className="assets_text">
                                 <img src={IMG.assetCard4} alt="" />
@@ -223,7 +295,7 @@ export default function Lyout ({activeNav}) {
                         </ul>
                         <div className="link">
                             <a href="#" className="link_dark">Get a wallet</a>
-                            <a href="#" className="link_light">Read more</a>
+                            <a href="#" className="link_light" target="_blank">Read more</a>
                         </div>
                         <p className="agree_text">
                             By connecting a wallet, you agree to Kelp’s <a href="https://docs.google.com/document/d/1eSIGFBIZhsH35fZ-EL_UqlK_8f08Vjup/edit" target="_blank">Terms of Service</a>

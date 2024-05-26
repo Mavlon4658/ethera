@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import IMG from "../../assets/images";
 
-export default function Restake ({setActiveNav}) {
+export default function Restake ({setConnectWallet, setActiveNav}) {
     const [tab, setTab] = useState(1);
     const [select, setSelect] = useState(1);
     const [selectOpen, setSelectOpen] = useState(true);
@@ -10,6 +10,11 @@ export default function Restake ({setActiveNav}) {
     useEffect(() => {
         setActiveNav('Restake')
     }, [])
+
+    function selected (idx) {
+        setSelect(idx);
+        setSelectOpen(true);
+    }
 
     return (<div className="restake_wrap dashboard__container">
         <div className="dashboard_card restake">
@@ -62,7 +67,11 @@ export default function Restake ({setActiveNav}) {
                                         </svg>
                                     </span>
                                 </button>
-                                <button type="button" className={`select_item ${select == 1 ? 'active' : ''}`} onClick={() => {setSelect(1)}}>
+                                <button
+                                    type="button"
+                                    className={`select_item ${select == 1 ? 'active' : ''}`}
+                                    onClick={() => selected(1)}
+                                >
                                     <span className="select_item__left">
                                         <img src={IMG.selectIcon1} alt="" />
                                         <img src={IMG.selectIcon1Active} className="active" alt="" />
@@ -74,7 +83,11 @@ export default function Restake ({setActiveNav}) {
                                         <span className="alert-grey">+100 EL Points/ETH</span>
                                     </span>
                                 </button>
-                                <button type="button" className={`select_item ${select == 2 ? 'active' : ''}`} onClick={() => {setSelect(2)}}>
+                                <button
+                                    type="button"
+                                    className={`select_item ${select == 2 ? 'active' : ''}`}
+                                    onClick={() => selected(2)}
+                                >
                                     <span className="select_item__left">
                                         <img src={IMG.selectIcon2} alt="" />
                                         <img src={IMG.selectIcon2Active} className="active" alt="" />
@@ -86,7 +99,11 @@ export default function Restake ({setActiveNav}) {
                                         <span className="alert-grey">+50 EL Points/ETH</span>
                                     </span>
                                 </button>
-                                <button type="button" className={`select_item ${select == 3 ? 'active' : ''}`} onClick={() => {setSelect(3)}}>
+                                <button
+                                    type="button"
+                                    className={`select_item ${select == 3 ? 'active' : ''}`}
+                                    onClick={() => selected(3)}
+                                >
                                     <span className="select_item__left">
                                         <img src={IMG.selectIcon3} alt="" />
                                         <img src={IMG.selectIcon3Active} className="active" alt="" />
@@ -98,7 +115,11 @@ export default function Restake ({setActiveNav}) {
                                         <span className="alert-grey">+50 EL Points/ETH</span>
                                     </span>
                                 </button>
-                                <button type="button" className={`select_item ${select == 4 ? 'active' : ''}`} onClick={() => {setSelect(4)}}>
+                                <button
+                                    type="button"
+                                    className={`select_item ${select == 4 ? 'active' : ''}`}
+                                    onClick={() => selected(4)}
+                                >
                                     <span className="select_item__left">
                                         <img src={IMG.selectIcon4} alt="" />
                                         <img src={IMG.selectIcon4Active} className="active" alt="" />
@@ -131,7 +152,11 @@ export default function Restake ({setActiveNav}) {
                                     <p className="d-p4">1 etETH = 0.9840 ETHx</p>
                                 </li>
                             </ul>
-                            <button type="submit" className="btn_gradient restake__form_submit">Connect Wallet</button>
+                            <button
+                                type="button"
+                                className="btn_gradient restake__form_submit"
+                                onClick={() => {setConnectWallet(true)}}
+                            >Connect Wallet</button>
                             <div className="progress_wrap">
                                 <div className="progress_text">
                                     <p className="d-p4">Restaking limit</p>
@@ -173,14 +198,14 @@ export default function Restake ({setActiveNav}) {
                 <ul className="content_link">
                     <li className="content_link__item">
                         <img src={IMG.auditLink1} alt="" className="icon" />
-                        <a href="#">
+                        <a href="#" target="_blank">
                             <span>Get full report</span>
                             <img src={IMG.linkIcon} alt="" />
                         </a>
                     </li>
                     <li className="content_link__item">
                         <img src={IMG.auditLink2} alt="" className="icon" />
-                        <a href="#">
+                        <a href="#" target="_blank">
                             <span>Get full report</span>
                             <img src={IMG.linkIcon} alt="" />
                         </a>

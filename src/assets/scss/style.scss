@@ -1424,12 +1424,13 @@ button, input, textarea {
         border: 1px solid $color-stroke;
         background: $color-bg;
         padding: 25px 36px 44px;
+        z-index: 2;
         
         @include media(1500) {
             width: 259px;
             left: 20px;
             top: 129px;
-            min-height: 598px;
+            min-height: 478px;
             padding: 25px 20px;
         }
 
@@ -1516,6 +1517,10 @@ button, input, textarea {
         padding: 24px 21px 24px 54px;
         margin-bottom: 16px;
 
+        @include media(1500) {
+            padding: 24px 21px;
+        }
+
         @include media(1250) {
             padding: 18px 13px;
         }
@@ -1593,6 +1598,72 @@ button, input, textarea {
                         width: 100%;
                         flex-direction: row-reverse;
                         justify-content: space-between;
+                    }
+                }
+
+                .alert {
+                    position: relative;
+
+                    img {
+                        cursor: pointer;
+                    }
+                    
+                    &_text {
+                        background: #fff;
+                        width: 158px;
+                        color: #000;
+                        border-radius: 6px;
+                        padding: 8px 5px 12px 9px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 19px;
+                        position: relative;
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            left: 50%;
+                            bottom: 0;
+                            transform: translate(-50%, 50%) rotateZ(45deg);
+                            width: 6px;
+                            height: 6px;
+                            background: #fff;
+
+                            @include media(800) {
+                                display: none;
+                            }
+                        }
+
+                        &__wrap {
+                            position: absolute;
+                            top: 2px;
+                            left: 50%;
+                            padding-bottom: 6px;
+                            transform: translate(-50%, -100%);
+                            display: none;
+
+                            @include media (800) {
+                                right: -13px;
+                                left: auto;
+                                transform: translate(0, -100%);
+                            }
+                        }
+
+                        p {
+                            font-size: 10px;
+                            font-weight: 400;
+
+                            span {
+                                font-size: 12px;
+                                display: block;
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        .alert_text__wrap {
+                            display: block;
+                        }
                     }
                 }
             }
@@ -2182,7 +2253,7 @@ button, input, textarea {
                     }
                 }
 
-                &.active {
+                &:hover, &.active {
                     background: #E7E7E7;
                     
                     .select_item__left {
@@ -2297,6 +2368,7 @@ button, input, textarea {
         }
 
         .form_control {
+
             label {
                 margin-bottom: 15px;
 
@@ -2327,6 +2399,7 @@ button, input, textarea {
                     font-weight: bold;
                     color: $color-white;
                     padding: 0 24px;
+                    border-radius: 0;
 
                     @include media(768) {
                         font-size: 18px;
@@ -2654,10 +2727,14 @@ button, input, textarea {
                         margin-top: 14px;
                         background: #373548;
                         padding: 14px 15px;
-                        display: flex;
+                        display: none;
                         flex-direction: column;
                         gap: 12px;
                         font-size: 12px;
+
+                        &.active {
+                            display: flex;
+                        }
 
                         li {
                             width: 156px;
@@ -2681,7 +2758,7 @@ button, input, textarea {
                 }
             }
 
-            .btn_gradient {
+            .btn_light {
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -2692,6 +2769,10 @@ button, input, textarea {
                 color: $color-black-pure;
                 padding: 10px 0;
                 width: 100%;
+
+                img {
+                    width: 14px;
+                }
             }
 
             .earn {
@@ -2802,7 +2883,7 @@ button, input, textarea {
         padding-top: 22px;
         background: $color-bg;
         border: 1px solid $color-stroke;
-        min-height: calc(100svh - 90px);
+        min-height: auto;
     }
 
     @include media(674) {
@@ -2901,7 +2982,7 @@ button, input, textarea {
                 }
             }
 
-            &.active {
+            &:hover {
                 &::before {
                     background: $color-gradient-nt;
                 }
@@ -2925,7 +3006,7 @@ button, input, textarea {
         padding: 35px 40px 40px;
 
         @include media(674) {
-            padding: 15px 0 36px;
+            padding: 15px 0 24px;
         }
     }
 
@@ -2981,6 +3062,7 @@ button, input, textarea {
             border: 1px solid $color-stroke;
             width: 100%;
             color: $color-white;
+            border-radius: 0;
 
             @include media(674) {
                 font-size: 16px;
@@ -3013,6 +3095,7 @@ button, input, textarea {
             top: 50%;
             transform: translateY(-50%);
             background: $color-gradient-nt;
+            color: $color-black-pure;
             padding: 4px 8px 5px 9px;
             font-size: 10px;
             font-weight: 600;
@@ -3060,7 +3143,7 @@ button, input, textarea {
         margin-top: 36px;
 
         @include media(674) {
-            margin-top: 10px;
+            margin-top: 22px;
         }
     }
 }

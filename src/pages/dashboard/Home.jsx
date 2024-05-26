@@ -1,7 +1,8 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import IMG from "../../assets/images"
 
-export default function Home ({setActiveNav}) {
+export default function Home ({setConnectWallet, setActiveNav}) {
+    const [accordion, setAccordion] = useState(true)
 
     useEffect(() => {
         setActiveNav('Dashboard')
@@ -27,9 +28,9 @@ export default function Home ({setActiveNav}) {
                                         - <br />
                                         <span>Ether Grand Points</span>
                                     </h4>
-                                    <img src={IMG.chevronBottom} alt="" />
+                                    <img src={IMG.chevronBottom} onClick={() => {setAccordion(!accordion)}} alt="" />
                                 </div>
-                                <ul>
+                                <ul className={`${accordion ? 'active' : ''}`}>
                                     <li>
                                         <span>Total Ether Points</span>
                                         <span>-</span>
@@ -57,7 +58,7 @@ export default function Home ({setActiveNav}) {
                             </div>
                         </li>
                     </ul>
-                    <a href="#" className="btn_gradient">
+                    <a href="#" className="btn_light">
                         <img src={IMG.warningBlack} alt="" />
                         <span>Connect wallet to view rewards</span>
                     </a>
@@ -88,7 +89,11 @@ export default function Home ({setActiveNav}) {
                         <span>Eigenlayer points</span>
                     </div>
                 </div>
-                <button type="submit" className="btn_gradient">Connect Wallet</button>
+                <button
+                    type="button"
+                    className="btn_gradient"
+                    onClick={() => {setConnectWallet(true)}}
+                >Connect Wallet</button>
             </form>
         </div>
     )

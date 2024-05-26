@@ -11,6 +11,7 @@ import { useState } from "react";
 
 function App() {
   const [activeNav, setActiveNav] = useState('')
+  const [connectWallet, setConnectWallet] = useState(false)
 
   function handleNav (data) {
     setActiveNav(data);
@@ -21,13 +22,13 @@ function App() {
       <Routes>
         <Route path="/">
           <Route index element={<Home/>} />
-          <Route path="dashboard" element={<DashboardLayout  activeNav={activeNav} />}>
-            <Route index element={<Dashboard setActiveNav={handleNav}/>} />
-            <Route path="restake" element={<Restake setActiveNav={handleNav}/>} />
+          <Route path="dashboard" element={<DashboardLayout connectWallet={connectWallet} setConnectWallet={setConnectWallet} activeNav={activeNav} />}>
+            <Route index element={<Dashboard setConnectWallet={setConnectWallet} setActiveNav={handleNav}/>} />
+            <Route path="restake" element={<Restake setConnectWallet={setConnectWallet} setActiveNav={handleNav}/>} />
             <Route path="defi" element={<Defi setActiveNav={handleNav}/>} />
             <Route path="bridge" element={<Bridge setActiveNav={handleNav}/>} />
-            <Route path="claim" element={<Claim setActiveNav={handleNav}/>} />
-            <Route path="wrap" element={<Wrap setActiveNav={handleNav}/>} />
+            <Route path="claim" element={<Claim setConnectWallet={setConnectWallet} setActiveNav={handleNav}/>} />
+            <Route path="wrap" element={<Wrap setConnectWallet={setConnectWallet} setActiveNav={handleNav}/>} />
           </Route>
         </Route>
       </Routes>

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import IMG from "../../assets/images";
 
-export default function Claim ({setActiveNav}) {
+export default function Claim ({ setConnectWallet, setActiveNav}) {
 
     useEffect(() => {
         setActiveNav('Claim ETHER')
@@ -53,7 +53,7 @@ export default function Claim ({setActiveNav}) {
                         <p className="d-p5">- Ethera</p>
                     </li>
                 </ul>
-                <button className="btn_gradient">Connect Wallet</button>
+                <button className="btn_gradient" onClick={() => {setConnectWallet(true)}}>Connect Wallet</button>
             </div>
 
             <div className="claim__foot claim_card">

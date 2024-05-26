@@ -62,17 +62,17 @@ export default function Footer () {
                     </form>
                 </div>
                 <div className="footer__bottom">
-                    <a href="#">
+                    <a href="#" target="_blank">
                         <img src={IMG.telegramLight} alt="" />
                         <img src={IMG.telegramDark} alt="" />
                         <span>Telegram</span>
                     </a>
-                    <a href="#">
+                    <a href="#" target="_blank">
                         <img src={IMG.discordLight} alt="" />
                         <img src={IMG.discordDark} alt="" />
                         <span>Discord</span>
                     </a>
-                    <a href="#">
+                    <a href="#" target="_blank">
                         <img src={IMG.twitterLight} alt="" />
                         <img src={IMG.twitterDark} alt="" />
                         <span>Twitter</span>
