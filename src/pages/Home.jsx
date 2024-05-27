@@ -28,7 +28,7 @@ export default function Home () {
                     </div>
                     <div className="home__links">
                         <Link to={'/dashboard/restake'} className="btn_gradient">Restake now</Link>
-                        <Link to={'/'} className="btn_light">Sign Up Now</Link>
+                        <a href="#contact" className="btn_light">Sign Up Now</a>
                     </div>
                     <div className="list_wrap">
                         <div className="main_container">

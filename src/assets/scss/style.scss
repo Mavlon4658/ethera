@@ -1423,14 +1423,15 @@ button, input, textarea {
         width: 294px;
         border: 1px solid $color-stroke;
         background: $color-bg;
-        padding: 25px 36px 44px;
+        padding: 25px 36px 48px;
         z-index: 2;
+        display: none;
         
         @include media(1500) {
             width: 259px;
             left: 20px;
             top: 129px;
-            min-height: 478px;
+            min-height: 480px;
             padding: 25px 20px;
         }
 
@@ -1441,10 +1442,116 @@ button, input, textarea {
             width: 100%;
             height: 100%;
             z-index: 5;
-            background: rgba(0, 0, 0, .7);
-            display: flex;
+            background: transparent;
             align-items: flex-end;
             padding: 0;
+
+            @keyframes moreLinkActive {
+                from {
+                    opacity: 0;
+                }
+
+                to {
+                    opacity: 1;
+                }
+            }
+
+            @keyframes linkActive {
+                from {
+                    transform: translateY(100%);
+                }
+
+                to {
+                    transform: translateY(0);
+                }
+            }
+
+            &.active {
+                display: flex;
+
+                .more_link__close {
+                    animation: moreLinkActive .3s linear 1;
+                }
+
+                ul {
+                    animation: linkActive .3s linear 1;
+                }
+            }
+
+            @keyframes moreEndActive {
+                from {
+                    display: flex;
+                }
+
+                to {
+                    display: flex;
+                }
+            }
+
+            @keyframes moreLinkEndActive {
+                from {
+                    opacity: 1;
+                }
+                to {
+                    opacity: 0;
+                }
+            }
+
+            @keyframes linkEndActive {
+                from {
+                    transform: translateY(0);
+                }
+                to {
+                    transform: translateY(100%);
+                }
+            }
+
+            &.end-active {
+                display: none;
+                animation: moreEndActive .3s linear 1;
+
+                .more_link__close {
+                    animation: moreLinkEndActive .3s linear 1;
+                }
+
+                ul {
+                    animation: linkEndActive .3s linear 1;
+                }
+            }
+        }
+
+        @media (min-width: 1250px) {
+            @keyframes moreLinkActive {
+                from {
+                    transform: translateX(50vw);
+                }
+    
+                to {
+                    transform: translateX(0);
+                }
+            }
+    
+            &.active {
+                display: block;
+                animation: moreLinkActive .3s linear 1;
+            }
+    
+            @keyframes moreLinkEndActive {
+                from {
+                    display: block;
+                    transform: translateX(0);
+                }
+                
+                to {
+                    display: block;
+                    transform: translateX(50vw);
+                }
+            }
+    
+            &.end-active {
+                display: none;
+                animation: moreLinkEndActive .3s linear 1;
+            }
         }
 
         &__close {
@@ -1455,11 +1562,8 @@ button, input, textarea {
                 width: 100%;
                 height: 100%;
                 background: transparent;
+                background: rgba(0, 0, 0, .7);
             }
-        }
-
-        &:not(.active) {
-            display: none;
         }
 
         ul {

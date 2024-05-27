@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import IMG from "../../assets/images";
 
 export default function Restake ({setConnectWallet, setActiveNav}) {
@@ -6,6 +6,7 @@ export default function Restake ({setConnectWallet, setActiveNav}) {
     const [select, setSelect] = useState(1);
     const [selectOpen, setSelectOpen] = useState(true);
     const [auditOpen, setAuditOpen] = useState(false)
+    const selectRef = useRef(null);
 
     useEffect(() => {
         setActiveNav('Restake')
@@ -59,7 +60,7 @@ export default function Restake ({setConnectWallet, setActiveNav}) {
                     <div className={`tab_body__item ${tab == 1 ? 'active' : ''}`}>
                         <form action="" className="restake__form">
                             <label className="d-p4">Select the asset</label>
-                            <div className={`select ${selectOpen ? 'active' : ''}`}>
+                            <div ref={selectRef} className={`select ${selectOpen ? '' : ''}`}>
                                 <button type="button" className="select_open" onClick={() => {setSelectOpen(false)}}>
                                     <span className="icon">
                                         <svg widths={16} height="9" viewBox="0 0 16 9" fill="none"  xmlns="http://www.w3.org/2000/svg">

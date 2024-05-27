@@ -1,6 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
 import IMG from "../../assets/images";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Lyout ({connectWallet, setConnectWallet, activeNav}) {
     const [navList, setNavList] = useState([
@@ -19,9 +19,20 @@ export default function Lyout ({connectWallet, setConnectWallet, activeNav}) {
         {name: 'Terms of service', img: IMG.moreLink5},
         {name: 'Risks & Disclaimer', img: IMG.moreLink6},
     ]);
-    const [activeMoreLink, setActiveMoreLink] = useState(false)
-    // const [connectWallet, setConnectWallet] = useState(false)
-    const [navLeft, setNavLeft] = useState(false)
+    const [activeMoreLink, setActiveMoreLink] = useState(false);
+    const [navLeft, setNavLeft] = useState(false);
+    const moreLinkRef = useRef(null);
+
+    function toggleMoreLink () {
+        let el = moreLinkRef.current;
+        if (el.classList.contains('active')) {
+            el.classList.remove('active');
+            el.classList.add('end-active');
+        } else {
+            el.classList.remove('end-active');
+            el.classList.add('active');
+        }
+    }
 
     return (
         <div className="dashboard">
@@ -37,7 +48,7 @@ export default function Lyout ({connectWallet, setConnectWallet, activeNav}) {
                     </div>
                     <div className="nav_sm__right">
                         <button className="btn_gradient" onClick={() => {setConnectWallet(true)}}>Connect wallet</button>
-                        <button className="btn_light" onClick={() => {setActiveMoreLink(!activeMoreLink)}}>
+                        <button className="btn_light" onClick={() => toggleMoreLink()}>
                             <img src={IMG.moreIcon} alt="" />
                         </button>
                     </div>
@@ -74,13 +85,16 @@ export default function Lyout ({connectWallet, setConnectWallet, activeNav}) {
             <div className="nav_right">
                 <div className="nav_right__head">
                     <button className="btn_gradient" onClick={() => {setConnectWallet(true)}}>Connect wallet</button>
-                    <button className="btn_light" onClick={() => {setActiveMoreLink(!activeMoreLink)}}>
+                    {/* <button className="btn_light" onClick={() => {setActiveMoreLink(!activeMoreLink)}}>
+                        <img src={IMG.moreIcon} alt="" />
+                    </button> */}
+                    <button className="btn_light" onClick={() => toggleMoreLink()}>
                         <img src={IMG.moreIcon} alt="" />
                     </button>
                 </div>
 
-                <div className={`more_link ${activeMoreLink ? 'active' : ''}`}>
-                    <div className="more_link__close" onClick={() => {setActiveMoreLink(false)}}></div>
+                <div ref={moreLinkRef} className={`more_link ${activeMoreLink ? 'active' : ''}`}>
+                    <div className="more_link__close" onClick={() => toggleMoreLink()}></div>
                     <ul>
                         {moreLink.map((network, idx) => (
                             <li key={idx}>
@@ -233,7 +247,7 @@ export default function Lyout ({connectWallet, setConnectWallet, activeNav}) {
                             </div>
                             <div className="assets_text">
                                 <img src={IMG.assetCard4} alt="" />
-                                <span>ETHx</span>
+                                <span>ETH</span>
                             </div>
                         </li>
                     </ul>
