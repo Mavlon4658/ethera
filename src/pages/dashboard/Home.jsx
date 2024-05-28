@@ -1,8 +1,14 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import IMG from "../../assets/images"
 
 export default function Home ({setConnectWallet, setActiveNav}) {
     const [accordion, setAccordion] = useState(true)
+    const accordionRef = useRef(null);
+
+    function toggleAccordion () {
+        const el = accordionRef.current;
+        el.style.maxHeight = el.style.maxHeight ? null : el.scrollHeight + 'px';
+    }
 
     useEffect(() => {
         setActiveNav('Dashboard')
@@ -28,22 +34,26 @@ export default function Home ({setConnectWallet, setActiveNav}) {
                                         - <br />
                                         <span>Ether Grand Points</span>
                                     </h4>
-                                    <img src={IMG.chevronBottom} onClick={() => {setAccordion(!accordion)}} alt="" />
+                                    <img src={IMG.chevronBottom} onClick={() => toggleAccordion()} alt="" />
                                 </div>
-                                <ul className={`${accordion ? 'active' : ''}`}>
-                                    <li>
-                                        <span>Total Ether Points</span>
-                                        <span>-</span>
-                                    </li>
-                                    <li>
-                                        <span>Conversion Factor</span>
-                                        <span>-</span>
-                                    </li>
-                                    <li>
-                                        <span>Ether Grand Points</span>
-                                        <span>-</span>
-                                    </li>
-                                </ul>
+                                <div className="accordion_wrap" ref={accordionRef}>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>Total Ether Points</span>
+                                                <span>-</span>
+                                            </li>
+                                            <li>
+                                                <span>Conversion Factor</span>
+                                                <span>-</span>
+                                            </li>
+                                            <li>
+                                                <span>Ether Grand Points</span>
+                                                <span>-</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </li>
                         <li className="point_card__item">

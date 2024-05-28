@@ -2826,19 +2826,20 @@ button, input, textarea {
                             font-size: 14px;
                         }
                     }
+
+                    .accordion_wrap {
+                        max-height: 0;
+                        overflow: hidden;
+                        transition: max-height 0.3s ease-in-out;
+                    }
                     
                     ul {
                         margin-top: 14px;
                         background: #373548;
                         padding: 14px 15px;
-                        display: none;
                         flex-direction: column;
                         gap: 12px;
                         font-size: 12px;
-
-                        &.active {
-                            display: flex;
-                        }
 
                         li {
                             width: 156px;
@@ -2855,7 +2856,7 @@ button, input, textarea {
                             }
 
                             .text_head img {
-                                display: none;
+                                // display: none;
                             }
                         }
                     }
