@@ -3,7 +3,7 @@ import IMG from "../../assets/images";
 
 export default function Restake ({setConnectWallet, setActiveNav}) {
     const [tab, setTab] = useState(1);
-    const [select, setSelect] = useState(1);
+    const [select, setSelect] = useState(null);
     const [selectOpen, setSelectOpen] = useState(true);
     const [auditOpen, setAuditOpen] = useState(false)
     const selectRef = useRef(null);
@@ -17,6 +17,7 @@ export default function Restake ({setConnectWallet, setActiveNav}) {
         // console.log(el.style.maxHeight);
         // el.style.maxHeight = el.style.maxHeight != '73px' ? '73px' : el.scrollHeight + 'px';
         el.classList.toggle('active')
+        // console.log('ishladi');
     }
 
     function selected (idx) {
@@ -149,7 +150,11 @@ export default function Restake ({setConnectWallet, setActiveNav}) {
                             <div className="form_control">
                                 <label className="d-p4">Enter amount</label>
                                 <div className="input">
-                                    <input type="number" placeholder="0.0" />
+                                    <input
+                                        type="number"
+                                        placeholder="0.0"
+                                        onWheel={(event) => { event.currentTarget.blur() } }
+                                        onKeyDown={(event) => { event.preventDefault() }} />
                                     <button type="button" className="btn_gradient">MAX</button>
                                 </div>
                             </div>

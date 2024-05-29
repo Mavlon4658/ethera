@@ -2332,7 +2332,8 @@ button, input, textarea {
                         }
         
                         &_open {
-                            display: block;
+                            display: block !important;
+                            z-index: 2 !important;
                         }
     
                         &_item {
@@ -2497,10 +2498,6 @@ button, input, textarea {
                     letter-spacing: 3%;
                 }
             }
-
-            // &.active {
-                
-            // }
         }
 
         .form_control {
