@@ -12,9 +12,17 @@ export default function Restake ({setConnectWallet, setActiveNav}) {
         setActiveNav('Restake')
     }, [])
 
+    function toggleSelect () {
+        const el = selectRef.current;
+        // console.log(el.style.maxHeight);
+        // el.style.maxHeight = el.style.maxHeight != '73px' ? '73px' : el.scrollHeight + 'px';
+        el.classList.toggle('active')
+    }
+
     function selected (idx) {
         setSelect(idx);
-        setSelectOpen(true);
+        // setSelectOpen(true);
+        toggleSelect();
     }
 
     return (<div className="restake_wrap dashboard__container">
@@ -60,80 +68,82 @@ export default function Restake ({setConnectWallet, setActiveNav}) {
                     <div className={`tab_body__item ${tab == 1 ? 'active' : ''}`}>
                         <form action="" className="restake__form">
                             <label className="d-p4">Select the asset</label>
-                            <div ref={selectRef} className={`select ${selectOpen ? '' : ''}`}>
-                                <button type="button" className="select_open" onClick={() => {setSelectOpen(false)}}>
+                            <div ref={selectRef} className="select_wrap">
+                                <button type="button" className="select_open" onClick={() => toggleSelect()}>
                                     <span className="icon">
                                         <svg widths={16} height="9" viewBox="0 0 16 9" fill="none"  xmlns="http://www.w3.org/2000/svg">
                                             <path d="M1 0.999999L8.00002 8L15 1" stroke="#EFEFE5" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"/>
                                         </svg>
                                     </span>
                                 </button>
-                                <button
-                                    type="button"
-                                    className={`select_item ${select == 1 ? 'active' : ''}`}
-                                    onClick={() => selected(1)}
-                                >
-                                    <span className="select_item__left">
-                                        <img src={IMG.selectIcon1} alt="" />
-                                        <img src={IMG.selectIcon1Active} className="active" alt="" />
-                                        ETHx
-                                    </span>
-                                    <span className="select_item__right">
-                                        <span className="alert-grey">EL Points</span>
-                                        <span className="alert-grey">Ether Points</span>
-                                        <span className="alert-grey">+100 EL Points/ETH</span>
-                                    </span>
-                                </button>
-                                <button
-                                    type="button"
-                                    className={`select_item ${select == 2 ? 'active' : ''}`}
-                                    onClick={() => selected(2)}
-                                >
-                                    <span className="select_item__left">
-                                        <img src={IMG.selectIcon2} alt="" />
-                                        <img src={IMG.selectIcon2Active} className="active" alt="" />
-                                        ETH
-                                    </span>
-                                    <span className="select_item__right">
-                                        <span className="alert-grey">EL Points</span>
-                                        <span className="alert-grey">Ether Points</span>
-                                        <span className="alert-grey">+50 EL Points/ETH</span>
-                                    </span>
-                                </button>
-                                <button
-                                    type="button"
-                                    className={`select_item ${select == 3 ? 'active' : ''}`}
-                                    onClick={() => selected(3)}
-                                >
-                                    <span className="select_item__left">
-                                        <img src={IMG.selectIcon3} alt="" />
-                                        <img src={IMG.selectIcon3Active} className="active" alt="" />
-                                        stETH
-                                    </span>
-                                    <span className="select_item__right">
-                                        <span className="alert-grey">EL Points</span>
-                                        <span className="alert-grey">Ether Points</span>
-                                        <span className="alert-grey">+50 EL Points/ETH</span>
-                                    </span>
-                                </button>
-                                <button
-                                    type="button"
-                                    className={`select_item ${select == 4 ? 'active' : ''}`}
-                                    onClick={() => selected(4)}
-                                >
-                                    <span className="select_item__left">
-                                        <img src={IMG.selectIcon4} alt="" />
-                                        <img src={IMG.selectIcon4Active} className="active" alt="" />
-                                        sfrxETH
-                                    </span>
-                                    <span className="select_item__right">
-                                        <span className="alert-grey">EL Points</span>
-                                        <span className="alert-grey">Ether Points</span>
-                                    </span>
-                                </button>
-                                <div className="select_bottom">
-                                    <span>Other LSTs</span>
-                                    <button type="button" className="btn_light" onClick={() => {setSelectOpen(true)}}>Coming soon</button>
+                                <div className={`select ${selectOpen ? '' : ''}`}>
+                                    <button
+                                        type="button"
+                                        className={`select_item ${select == 1 ? 'active' : ''}`}
+                                        onClick={() => selected(1)}
+                                    >
+                                        <span className="select_item__left">
+                                            <img src={IMG.selectIcon1} alt="" />
+                                            <img src={IMG.selectIcon1Active} className="active" alt="" />
+                                            ETHx
+                                        </span>
+                                        <span className="select_item__right">
+                                            <span className="alert-grey">EL Points</span>
+                                            <span className="alert-grey">Ether Points</span>
+                                            <span className="alert-grey">+100 EL Points/ETH</span>
+                                        </span>
+                                    </button>
+                                    <button
+                                        type="button"
+                                        className={`select_item ${select == 2 ? 'active' : ''}`}
+                                        onClick={() => selected(2)}
+                                    >
+                                        <span className="select_item__left">
+                                            <img src={IMG.selectIcon2} alt="" />
+                                            <img src={IMG.selectIcon2Active} className="active" alt="" />
+                                            ETH
+                                        </span>
+                                        <span className="select_item__right">
+                                            <span className="alert-grey">EL Points</span>
+                                            <span className="alert-grey">Ether Points</span>
+                                            <span className="alert-grey">+50 EL Points/ETH</span>
+                                        </span>
+                                    </button>
+                                    <button
+                                        type="button"
+                                        className={`select_item ${select == 3 ? 'active' : ''}`}
+                                        onClick={() => selected(3)}
+                                    >
+                                        <span className="select_item__left">
+                                            <img src={IMG.selectIcon3} alt="" />
+                                            <img src={IMG.selectIcon3Active} className="active" alt="" />
+                                            stETH
+                                        </span>
+                                        <span className="select_item__right">
+                                            <span className="alert-grey">EL Points</span>
+                                            <span className="alert-grey">Ether Points</span>
+                                            <span className="alert-grey">+50 EL Points/ETH</span>
+                                        </span>
+                                    </button>
+                                    <button
+                                        type="button"
+                                        className={`select_item ${select == 4 ? 'active' : ''}`}
+                                        onClick={() => selected(4)}
+                                    >
+                                        <span className="select_item__left">
+                                            <img src={IMG.selectIcon4} alt="" />
+                                            <img src={IMG.selectIcon4Active} className="active" alt="" />
+                                            sfrxETH
+                                        </span>
+                                        <span className="select_item__right">
+                                            <span className="alert-grey">EL Points</span>
+                                            <span className="alert-grey">Ether Points</span>
+                                        </span>
+                                    </button>
+                                    <div className="select_bottom">
+                                        <span>Other LSTs</span>
+                                        <button type="button" className="btn_light" onClick={() => toggleSelect()}>Coming soon</button>
+                                    </div>
                                 </div>
                             </div>
                             <div className="form_control">

@@ -2266,15 +2266,102 @@ button, input, textarea {
         }
 
         .select {
-            border: 1px solid $color-stroke;
             padding: 9px 9px 18px;
-            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
 
             @include media(768) {
-                padding: 15px  13px;
+                padding: 0px  13px;
                 width: calc(100% + 24px);
                 margin-left: -12px;
                 margin-bottom: 15px;
+            }
+
+            &_wrap {
+                overflow: hidden;
+                transition: all 0.3s ease-in-out;
+                border: 1px solid $color-stroke;
+                margin-bottom: 40px;
+                max-height: 296px;
+                position: relative;
+                z-index: 1;
+
+                @include media(768) {
+                    max-height: 362px;
+                }
+                
+                &.active {
+                    max-height: 79px;
+                    border: 0;
+
+                    @include media(768) {
+                        max-height: 69px;
+                    }
+    
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        z-index: -1;
+                        background: $color-gradient-nt;
+                    }
+    
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 1px;
+                        left: 1px;
+                        width: calc(100% - 2px);
+                        height: calc(100% - 2px);
+                        z-index: -1;
+                        background: $color-bg;
+                    }
+
+                    .select {
+                        padding: 16px 42px 16px 24px;
+                        position: relative;
+                        z-index: 1;
+        
+                        @include media(768) {
+                            width: 100%;
+                            margin-left: 0;
+                            padding: 0px 28px 0px 10px;
+                        }
+        
+                        &_open {
+                            display: block;
+                        }
+    
+                        &_item {
+                            // padding: 0;
+                            background: transparent;
+                            order: 2;
+    
+                            &.active {
+                                order: 1;
+                            }
+    
+                            &__left {
+                                color: $color-white !important;
+    
+                                img {
+                                    display: block !important;
+    
+                                    &.active {
+                                        display: none !important;
+                                    }
+                                }
+                            }
+                        }
+    
+                        &_bottom {
+                            // display: none;
+                        }
+                    }
+                }
             }
 
             &_open {
@@ -2311,6 +2398,10 @@ button, input, textarea {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+
+                @include media(768) {
+                    min-height: 71px;
+                }
 
                 &__left {
                     display: flex;
@@ -2382,9 +2473,12 @@ button, input, textarea {
                 padding-top: 20px;
                 margin-top: 13px;
                 border-top: 1px solid $color-stroke;
+                order: 3;
 
                 @include media(768) {
                     padding-top: 12px;
+                    width: calc(100% - 18px);
+                    margin-left: 9px;
                 }
 
                 span {
@@ -2404,71 +2498,9 @@ button, input, textarea {
                 }
             }
 
-            &.active {
-                padding: 16px 42px 16px 24px;
-                position: relative;
-                border: 0;
-                z-index: 1;
-
-                @include media(768) {
-                    width: 100%;
-                    margin-left: 0;
-                    padding: 15px 28px 15px 10px;
-                }
-
-                &::before {
-                    content: "";
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    width: 100%;
-                    height: 100%;
-                    z-index: -1;
-                    background: $color-gradient-nt;
-                }
-
-                &::after {
-                    content: "";
-                    position: absolute;
-                    top: 1px;
-                    left: 1px;
-                    width: calc(100% - 2px);
-                    height: calc(100% - 2px);
-                    z-index: -1;
-                    background: $color-bg;
-                }
-
-                .select {
-                    &_open {
-                        display: block;
-                    }
-
-                    &_item {
-                        padding: 0;
-                        background: transparent;
-
-                        &:not(.active) {
-                            display: none;
-                        }
-
-                        &__left {
-                            color: $color-white;
-
-                            img {
-                                display: block;
-
-                                &.active {
-                                    display: none;
-                                }
-                            }
-                        }
-                    }
-
-                    &_bottom {
-                        display: none;
-                    }
-                }
-            }
+            // &.active {
+                
+            // }
         }
 
         .form_control {
