@@ -1,7 +1,11 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import IMG from "../../assets/images"
+import { NumericFormat } from 'react-number-format';
+import { PatternFormat } from 'react-number-format';
 
 export default function Wrap ({setConnectWallet, setActiveNav}) {
+    const [inputValue, setInputValue] = useState('')
+    const [inputValue2, setInputValue2] = useState('')
 
     useEffect(() => {
         setActiveNav('Wrap etETH')
@@ -17,7 +21,21 @@ export default function Wrap ({setConnectWallet, setActiveNav}) {
                 <div className="form_control">
                     <label htmlFor="" className="d-p3">From</label>
                     <div className="input">
-                        <input type="number" placeholder="0.0" />
+                        {/* <input type="number" placeholder="0.0" /> */}
+                        <NumericFormat
+                            value={inputValue}
+                            thousandSeparator={' '}
+                            decimalSeparator={'.'}
+                            decimalScale={1}
+                            fixedDecimalScale={true}
+                            prefix={''}
+                            allowNegative={false}
+                            allowLeadingZeros={false}
+                            allowEmptyFormatting={false}
+                            displayType={'input'}
+                            placeholder={'0.0'}
+                            onValueChange={(values) => console.log(values)}
+                        />
                         <span>etETH</span>
                         <button type="button">max</button>
                     </div>
@@ -30,7 +48,21 @@ export default function Wrap ({setConnectWallet, setActiveNav}) {
                 <div className="form_control">
                     <label htmlFor="" className="d-p3">To</label>
                     <div className="input">
-                        <input type="number" placeholder="0.0" />
+                        {/* <input type="number" placeholder="0.0" /> */}
+                        <NumericFormat
+                            value={inputValue2}
+                            thousandSeparator={' '}
+                            decimalSeparator={'.'}
+                            decimalScale={1}
+                            fixedDecimalScale={true}
+                            prefix={''}
+                            allowNegative={false}
+                            allowLeadingZeros={false}
+                            allowEmptyFormatting={false}
+                            displayType={'input'}
+                            placeholder={'0.0'}
+                            onValueChange={(values) => console.log(values)}
+                        />
                         <span>wetETH</span>
                     </div>
                 </div>

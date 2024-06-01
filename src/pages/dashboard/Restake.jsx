@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import IMG from "../../assets/images";
+import { NumericFormat } from 'react-number-format';
+import { PatternFormat } from 'react-number-format';
 
 export default function Restake ({setConnectWallet, setActiveNav}) {
     const [tab, setTab] = useState(1);
@@ -7,6 +9,8 @@ export default function Restake ({setConnectWallet, setActiveNav}) {
     const [selectOpen, setSelectOpen] = useState(true);
     const [auditOpen, setAuditOpen] = useState(false)
     const selectRef = useRef(null);
+    const [inputValue, setInputValue] = useState('');
+    const [isValid, setIsValid] = useState(true);
 
     useEffect(() => {
         setActiveNav('Restake')
@@ -25,6 +29,7 @@ export default function Restake ({setConnectWallet, setActiveNav}) {
         // setSelectOpen(true);
         toggleSelect();
     }
+
 
     return (<div className="restake_wrap dashboard__container">
         <div className="dashboard_card restake">
@@ -150,11 +155,25 @@ export default function Restake ({setConnectWallet, setActiveNav}) {
                             <div className="form_control">
                                 <label className="d-p4">Enter amount</label>
                                 <div className="input">
-                                    <input
-                                        type="number"
+                                    {/* <input
+                                        type="text"
                                         placeholder="0.0"
                                         onWheel={(event) => { event.currentTarget.blur() } }
-                                        onKeyDown={(event) => { event.preventDefault() }} />
+                                    /> */}
+                                    <NumericFormat
+                                        value={inputValue}
+                                        thousandSeparator={' '}
+                                        decimalSeparator={'.'}
+                                        decimalScale={1}
+                                        fixedDecimalScale={true}
+                                        prefix={''}
+                                        allowNegative={false}
+                                        allowLeadingZeros={false}
+                                        allowEmptyFormatting={false}
+                                        displayType={'input'}
+                                        placeholder={'0.0'}
+                                        onValueChange={(values) => console.log(values)}
+                                    />
                                     <button type="button" className="btn_gradient">MAX</button>
                                 </div>
                             </div>
